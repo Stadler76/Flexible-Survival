@@ -145,6 +145,7 @@ Book 1 - Variable Definitions
 The file of flexiblestory is called "flexible1".
 
 MonsterID is a number that varies.[@Tag:NotSaved]
+MonsterDominance is a number that varies.[@Tag:NotSaved] MonsterDominance is usually 50.
 NewTypeInfectionActive is a truth state that varies.[@Tag:NotSaved] NewTypeInfectionActive is usually false.
 The player has text called name. The name of Player is usually "Player".
 [base stats of any character]

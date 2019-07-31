@@ -1211,6 +1211,7 @@ monstermemory is a number that varies.
 to say DVimpregchance: [Allows for varied offspring by Sam/Dracovixentaur]
 	let Z be a random number between 1 and 4;
 	now monstermemory is MonsterID;
+	now MonsterDominance is 85;
 	if Z is 1 and FemaleList is not banned: [puts Vixentaur as lead monster in case of impregnation]
 		setmonster "Vixentaur";
 		say "[impregchance]";
@@ -1224,6 +1225,7 @@ to say DVimpregchance: [Allows for varied offspring by Sam/Dracovixentaur]
 		setmonster "Dracovixentaur";
 		say "[ovichance]";
 	now MonsterID is monstermemory;
+	now MonsterDominance is 50;
 
 
 Section 8 - Endings
