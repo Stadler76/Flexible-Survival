@@ -697,16 +697,16 @@ Chapter 3-1 - Impregnation and Ovi-Impreg Subroutines
 
 To impregnate with (x - text):
 	if child is born or gestation of child > 0 or "Sterile" is listed in feats of Player or larvaegg is 2 or ( Cunt Count of Player is 0 and player is not mpreg_ok ):
-		now MonsterDominance is 50;
+		now MonsterDominance is MonsterDominanceDefault;
 		stop the action;
 	if Player is not female and "MPreg" is listed in feats of Player and ( level of Velos is 1 and HP of Velos > 2 ):
-		now MonsterDominance is 50;
+		now MonsterDominance is MonsterDominanceDefault;
 		stop the action;
 	if there is a name of x in the Table of Random Critters:
 		choose a row with Name of x in the Table of Random Critters;
 	else:
 		say "ERROR: Creature [x] not found in the Table of Random Critters. Please report this on the FS Discord.";
-		now MonsterDominance is 50;
+		now MonsterDominance is MonsterDominanceDefault;
 		stop the action;
 	if "Cheerbreeder" is listed in feats of Player:
 		if "Selective Mother" is listed in feats of Player:
@@ -715,7 +715,7 @@ To impregnate with (x - text):
 				increase score by 0;
 			else:
 				say "You choose not to accept the seed.";
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		now HeadName of Child is "Football Wolfman";
@@ -740,7 +740,7 @@ To impregnate with (x - text):
 			else:
 				say "You choose not to accept the seed.";
 				remove "Chase's Breeder" from feats of Player;
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		now HeadName of Child is "Tiger";
@@ -766,7 +766,7 @@ To impregnate with (x - text):
 				say "You choose not to accept the seed.";
 				remove "Fang's Mate" from feats of Player;
 				now hunger of Fang is 0;
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		now HeadName of Child is "Feral Wolf";
@@ -791,7 +791,7 @@ To impregnate with (x - text):
 			else:
 				say "You choose not to accept the seed.";
 				remove "Chris's Breeder Slut" from feats of Player;
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		now HeadName of Child is "Orc Warrior";
@@ -816,7 +816,7 @@ To impregnate with (x - text):
 			else:
 				say "You choose not to accept the seed.";
 				remove "Human Carrier" from feats of Player;
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		now HeadName of Child is "Human";
@@ -843,7 +843,7 @@ To impregnate with (x - text):
 				increase score by 0;
 			else:
 				say "You choose not to accept the seed.";
-				now MonsterDominance is 50;
+				now MonsterDominance is MonsterDominanceDefault;
 				stop the action;
 		now gestation of Child is a random number from 24 to 48;
 		[making sure all body parts are available]
@@ -918,7 +918,7 @@ To impregnate with (x - text):
 			now AssSpeciesName of Child is AssSpeciesName of Impregnator;
 			now TailSpeciesName of Child is TailSpeciesName of Impregnator;
 		else: [random choosing]
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now HeadName of Child is Name entry;
 				if Species Name entry is not "":
 					now HeadSpeciesName of Child is Species Name entry;
@@ -927,7 +927,7 @@ To impregnate with (x - text):
 			else:
 				now HeadName of Child is HeadName of Impregnator;
 				now HeadSpeciesName of Child is HeadSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now TorsoName of Child is Name entry;
 				if Species Name entry is not "":
 					now TorsoSpeciesName of Child is Species Name entry;
@@ -936,7 +936,7 @@ To impregnate with (x - text):
 			else:
 				now TorsoName of Child is TorsoName of Impregnator;
 				now TorsoSpeciesName of Child is TorsoSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now BackName of Child is Name entry;
 				if Species Name entry is not "":
 					now BackSpeciesName of Child is Species Name entry;
@@ -945,7 +945,7 @@ To impregnate with (x - text):
 			else:
 				now BackName of Child is BackName of Impregnator;
 				now BackSpeciesName of Child is BackSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now ArmsName of Child is Name entry;
 				if Species Name entry is not "":
 					now ArmsSpeciesName of Child is Species Name entry;
@@ -954,7 +954,7 @@ To impregnate with (x - text):
 			else:
 				now ArmsName of Child is ArmsName of Impregnator;
 				now ArmsSpeciesName of Child is ArmsSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now LegsName of Child is Name entry;
 				if Species Name entry is not "":
 					now LegsSpeciesName of Child is Species Name entry;
@@ -963,7 +963,7 @@ To impregnate with (x - text):
 			else:
 				now LegsName of Child is LegsName of Impregnator;
 				now LegsSpeciesName of Child is LegsSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now AssName of Child is Name entry;
 				if Species Name entry is not "":
 					now AssSpeciesName of Child is Species Name entry;
@@ -972,7 +972,7 @@ To impregnate with (x - text):
 			else:
 				now AssName of Child is AssName of Impregnator;
 				now AssSpeciesName of Child is AssSpeciesName of Impregnator;
-			if a random chance of MonsterDominance in 100 succeeds:
+			if a random chance of MonsterDominance in 1000 succeeds:
 				now TailName of Child is Name entry;
 				if Species Name entry is not "":
 					now TailSpeciesName of Child is Species Name entry;
