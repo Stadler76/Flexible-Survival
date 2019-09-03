@@ -21,6 +21,41 @@ object	name
 Jerome	"Jerome"
 
 Jerome is a man.
+ScaleValue of Jerome is 3. [human sized]
+Body Weight of Jerome is 7. [scale of 1-9 for body weight, grouped into low weight (1-3), mid weight (4-6) and high weight (7-9)]
+Body Definition of Jerome is 6. [scale of 1-9 for body definition, grouped into low muscle (1-3), mid muscle (4-6), high muscle (7-9)]
+[Body Adjective is generated out of the body weight and body definition and can be used in scenes - one word descriptive adjective depending on weight and definition groups: low weight group: skinny/slender/lithe; mid weight group: average/fit/muscled; high weight group: pudgy/husky/jacked]
+Androginity of Jerome is 2. [Gender Adjective is generated out of androginity 1-9: hypermasculine/masculine/somewhat effeminate/effeminate/androgynous/feminine butch/tomboyish/feminine/hyperfeminine]
+Mouth Length of Jerome is 6. [inches deep for face fucking; maximum possible will be double this number (when deep throating)]
+Mouth Circumference of Jerome is 3. [mouth circumference 1-5, "tiny, small, normal, wide, gaping"]
+Tongue Length of Jerome is 6. [length in inches]
+Breast Size of Jerome is 0. [cup size as number, counting Flat Pecs = 0, A = 1, B = 2, ...]
+Nipple Count of Jerome is 2. [count of nipples]
+Asshole Depth of Jerome is 10. [inches deep for anal fucking]
+Asshole Tightness of Jerome is 2. [asshole tightness 1-5, "extremely tight, tight, receptive, open, gaping"]
+Cock Count of Jerome is 1. [number of cocks]
+Cock Girth of Jerome is 3. [thickness 1-5, thin/slender/average/thick/monstrous]
+Cock Length of Jerome is 9. [length in inches]
+Ball Count of Jerome is 2. [allowed numbers: 1 (uniball), 2 or 4]
+Ball Size of Jerome is 3. [size of balls 1-7: "acorn-sized", "dove egg-sized", "chicken egg-sized" "goose-egg sized", "ostrich-egg sized", "basketball-sized", "beachball-sized"]
+Cunt Count of Jerome is 0. [number of cunts]
+Cunt Depth of Jerome is 0. [penetratable length in inches; some minor stretching allowed, or more with Twisted Capacity]
+Cunt Tightness of Jerome is 0. [size 1-5, generates adjectives of extremely tight/tight/receptive/open/gaping]
+Clit Size of Jerome is 0. [size 1-5, very small/small/average/large/very large]
+[Basic Interaction states as of game start]
+PlayerMet of Jerome is false.
+PlayerRomanced of Jerome is false.
+PlayerFriended of Jerome is false.
+PlayerControlled of Jerome is false.
+PlayerFucked of Jerome is false.
+OralVirgin of Jerome is false.
+Virgin of Jerome is true.
+AnalVirgin of Jerome is false.
+PenileVirgin of Jerome is false.
+SexuallyExperienced of Jerome is true.
+TwistedCapacity of Jerome is false. [Twisted Characters can take any penetration, no matter the size]
+Sterile of Jerome is true. [steriles can't knock people up]
+MainInfection of Jerome is "".
 The description of Jerome is "[JeromeDesc]".
 The conversation of Jerome is { "Pay up!" }.
 Jerome is in Shag Shack Entrance.
@@ -231,6 +266,7 @@ to say ShagShackWhoringPayment:
 				say "a small container with some pills, from what you know this will raise the Libido of anyone who takes it.";
 				say "[bold type]You gain 1 libido pill![roman type][line break]";
 				increase carried of libido pill by 1;
+	follow the turnpass rule;
 
 the fuckscene of Jerome is "     As you make an amorous offer to the shark, Jerome laughs and shakes his head. 'Much as I'd love to, I'm busy with business. Can I interest you in having a go with my 'talent' in there instead?'".
 
@@ -1216,7 +1252,7 @@ to say ShagShackSex22: [by Hierophant]
 			say "     Her magic ignites your libido again, your cock growing painfully stiff in record time as she plays. There's no nervousness in the Muse's playing. She's truly adjusted to this work. You feel a pressure on your lap and the texture of feathers, her magic giving the impression of the bird straddling you even as she sits across from you. There's still no hesitation to her magic, that sensation of being ridden overwhelming you as you begin roughly mating with the bird magically. You've fully adjusted to the oddity of this supernatural coupling, treating it like you would any other sexual encounter as you slake your lusts.";
 			say "     Her playing begins to reach a crescendo with time, both of you approaching your very peaks. It feels just as good as last time as you reach the edge, anticipating the powerful climax you know is coming. And soon enough, the both of you share cries of pleasure as you climax into her yet again. You both come down from the bliss of release, Cassandra visibly dazed by the intensity of her orgasm. She breathes heavily, breasts heaving as she lies back on the mattress and tries to recover. 'Hhhfff... amazing. Thanks for that. Can't wait to do it again!' she adds, as you dress yourself and head out.";
 		else if Player is female:
-			say "     You're not even remotely surprised as your cunt goes moist in an instant, well used to the Muse's odd effect on your biology. Instead, you relax yourself, getting ready for whatever she has in store... and then a spectral apparition of a dog's penis appears, bright-red and already drooling precum. 'I'm good at dog dicks, apparently,' Cassandra says, as the pointed tip begins probing at your entrance... then shoves half of itself in at once. The sensation of being fucked right off the bat by an animal's cock is intense, your legs instinctually trying to squeeze around a lover's hips but finding no purchase as it plunges in and out of your folds. With all the intensity of being roughly mounted by a real canine, you moan loudly, enjoying the animalistic coupling provided by the bird's magic.";
+			say "     You're not even remotely surprised as your cunt goes moist in an instant, well used to the Muse's odd effect on your biology. Instead, you relax yourself, getting ready for whatever she has in store... and then a spectral apparition of a dog's penis appears, bright-red and already drooling precum. 'I'm good at dog dicks, apparently,' Cassandra says, as the pointed tip begins probing at your entrance... then shoves half of itself in at once. The sensation of being fucked right off the bat by an animal's cock is intense, your legs instinctively trying to squeeze around a lover's hips but finding no purchase as it plunges in and out of your folds. With all the intensity of being roughly mounted by a real canine, you moan loudly, enjoying the animalistic coupling provided by the bird's magic.";
 			say "     You're not entirely sure how long the fucking goes on for, as you close your eyes and imagine a particularly handsome [one of]great dane[or]German Shepherd[or]dalmatian[or]husky[or]malamute[or]borzoi[at random] attached to the cock plowing you, but eventually, you feel a knot begin to bump against your lips. The thrusts get more intense... and then it pushes in to the hilt, the knot locking inside you, and the cock giving a rough throb before hot semen gushes into your folds. You're not entirely sure where it's all coming from, but you can hardly complain as the sensation of getting filled drives you hard over the edge.";
 			say "     Cassandra ends the song as your climax ends, the cock inside of you... and its seed... disappearing into thin air entirely. Cassandra gives a cheeky, little bow, grinning at you. 'Thank you, thank you, I'm here all week,' she states. For a moment, you just lie there, enjoying the afterglow of your supernatural mating, while Cassandra idly plays out the bassline to a song you remember hearing on the radio once or twice. Seems even Muses appreciate pop, sometimes. 'Glad that you had a good time, sweetie. I'll see you soon, huh?' she asks, as you finally stand, dressing yourself and shakily leaving the room.";
 		else:
