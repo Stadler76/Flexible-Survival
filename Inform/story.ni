@@ -33,7 +33,7 @@ Use Scoring.
 
 [ Basic Functions moved to Basic Functions.i7x in Core Mechanics]
 
-The release number is 66.
+The release number is 67.
 The story creation year is 2010.
 The maximum score is 2500.
 
@@ -341,35 +341,41 @@ The player has a list of text called PenileVirginitiesTaken.
 A person can be a trader.
 Scenario is a text that varies.
 
-Child is a person.
+a creature is a kind of person.
+a creature has a text called Name. Name is usually "".
+a creature has a text called BodyName. BodyName is usually "Human".
+a creature has a text called FaceName. FaceName is usually "Human".
+a creature has a text called SkinName. SkinName is usually "Human".
+a creature has a text called CockName. CockName is usually "Human".
+a creature has a text called TailName. TailName is usually "Human".
+a creature has a text called bodySpeciesName. BodySpeciesName is usually "Human".
+a creature has a text called faceSpeciesName. FaceSpeciesName is usually "Human".
+a creature has a text called skinSpeciesName. SkinSpeciesName is usually "Human".
+a creature has a text called cockSpeciesName. cockSpeciesName is usually "Human".
+a creature has a text called tailSpeciesName. TailSpeciesName is usually "Human".
+a creature has a text called HeadName. HeadName is usually "Human".
+a creature has a text called TorsoName. TorsoName is usually "Human".
+a creature has a text called BackName. BackName is usually "Human".
+a creature has a text called ArmsName. ArmsName is usually "Human".
+a creature has a text called LegsName. LegsName is usually "Human".
+a creature has a text called AssName. AssName is usually "Human".
+a creature has a text called TailName. TailName is usually "Human".
+a creature has a text called CockName. CockName is usually "Human".
+a creature has a text called CuntName. CuntName is usually "Human".
+a creature has a text called HeadSpeciesName. HeadSpeciesName is usually "Human".
+a creature has a text called TorsoSpeciesName. TorsoSpeciesName is usually "Human".
+a creature has a text called BackSpeciesName. BackSpeciesName is usually "Human".
+a creature has a text called ArmsSpeciesName. ArmsSpeciesName is usually "Human".
+a creature has a text called LegsSpeciesName. LegsSpeciesName is usually "Human".
+a creature has a text called AssSpeciesName. AssSpeciesName is usually "Human".
+a creature has a text called TailSpeciesName. TailSpeciesName is usually "Human".
+a creature has a text called CockSpeciesName. CockSpeciesName is usually "Human".
+a creature has a text called CuntSpeciesName. CuntSpeciesName is usually "Human".
+
+Child is a creature.
 The printed name of Child is "Child".
-Child has text called name. The name of Child is usually "".
 Child has a number called Gestation.
 Child can be born. Child is not born.
-Child has a text called BodyName. BodyName is usually "Human".
-Child has a text called FaceName. FaceName is usually "Human".
-Child has a text called SkinName. SkinName is usually "Human".
-Child has a text called CockName. CockName is usually "Human".
-Child has a text called TailName. TailName is usually "Human".
-Child has a text called bodySpeciesName. BodySpeciesName is usually "Human".
-Child has a text called faceSpeciesName. FaceSpeciesName is usually "Human".
-Child has a text called skinSpeciesName. SkinSpeciesName is usually "Human".
-Child has a text called cockSpeciesName. cockSpeciesName is usually "Human".
-Child has a text called tailSpeciesName. TailSpeciesName is usually "Human".
-Child has a text called HeadName. HeadName is usually "Human".
-Child has a text called TorsoName. TorsoName is usually "Human".
-Child has a text called BackName. BackName is usually "Human".
-Child has a text called ArmsName. ArmsName is usually "Human".
-Child has a text called LegsName. LegsName is usually "Human".
-Child has a text called AssName. AssName is usually "Human".
-Child has a text called TailName. TailName is usually "Human".
-Child has a text called HeadSpeciesName. HeadSpeciesName is usually "Human".
-Child has a text called TorsoSpeciesName. TorsoSpeciesName is usually "Human".
-Child has a text called BackSpeciesName. BackSpeciesName is usually "Human".
-Child has a text called ArmsSpeciesName. ArmsSpeciesName is usually "Human".
-Child has a text called LegsSpeciesName. LegsSpeciesName is usually "Human".
-Child has a text called AssSpeciesName. AssSpeciesName is usually "Human".
-Child has a text called TailSpeciesName. TailSpeciesName is usually "Human".
 Childrenfaces is a list of text that varies.
 Childrenskins is a list of text that varies.
 Childrenbodies is a list of text that varies.
@@ -380,34 +386,13 @@ child	"child"
 yourself	"yourself"
 Offspring	"offspring"
 Impregnator	"Impregnator"
+Impregnatee	"Impregnatee"
 
-Impregnator is a person.
+Impregnator is a creature.
 The printed name of Impregnator is "Impregnator".
-Impregnator has text called name. The name of Impregnator is usually "".
-Impregnator has a text called BodyName. BodyName is usually "Human".
-Impregnator has a text called FaceName. FaceName is usually "Human".
-Impregnator has a text called SkinName. SkinName is usually "Human".
-Impregnator has a text called CockName. CockName is usually "Human".
-Impregnator has a text called TailName. TailName is usually "Human".
-Impregnator has a text called bodySpeciesName. BodySpeciesName is usually "Human".
-Impregnator has a text called faceSpeciesName. FaceSpeciesName is usually "Human".
-Impregnator has a text called skinSpeciesName. SkinSpeciesName is usually "Human".
-Impregnator has a text called cockSpeciesName. cockSpeciesName is usually "Human".
-Impregnator has a text called tailSpeciesName. TailSpeciesName is usually "Human".
-Impregnator has a text called HeadName. HeadName is usually "Human".
-Impregnator has a text called TorsoName. TorsoName is usually "Human".
-Impregnator has a text called BackName. BackName is usually "Human".
-Impregnator has a text called ArmsName. ArmsName is usually "Human".
-Impregnator has a text called LegsName. LegsName is usually "Human".
-Impregnator has a text called AssName. AssName is usually "Human".
-Impregnator has a text called TailName. TailName is usually "Human".
-Impregnator has a text called HeadSpeciesName. HeadSpeciesName is usually "Human".
-Impregnator has a text called TorsoSpeciesName. TorsoSpeciesName is usually "Human".
-Impregnator has a text called BackSpeciesName. BackSpeciesName is usually "Human".
-Impregnator has a text called ArmsSpeciesName. ArmsSpeciesName is usually "Human".
-Impregnator has a text called LegsSpeciesName. LegsSpeciesName is usually "Human".
-Impregnator has a text called AssSpeciesName. AssSpeciesName is usually "Human".
-Impregnator has a text called TailSpeciesName. TailSpeciesName is usually "Human".
+
+Impregnatee is a creature.
+The printed name of Impregnatee is "Impregnatee".
 
 
 Offspring is a person. [bunker children]
@@ -443,6 +428,8 @@ Equipment has a text called descmod. The descmod of equipment is usually "".
 Equipment has a text called placement. The placement of equipment is usually "end".
 Equipment has a text called slot. The slot of equipment is usually "".
 Equipment has a truth state called taur-compatible. The taur-compatible of equipment is usually false.
+Equipment has a number called GenderAppearance. The GenderAppearance of equipment is usually 0. [neutral]
+Equipment has a list of text called Traits.
 Equipment has a number called size. The size of equipment is usually 3.
 Equipment has a number called AC. The AC of equipment is usually 0.
 Equipment has a number called effectiveness. The effectiveness of equipment is usually 0.
@@ -618,6 +605,12 @@ internalbypass is a truth state that varies. internalbypass is usually false.
 
 Definition: A person (called x) is internal:
 	if CockName of x is listed in infections of InternalCockList and internalbypass is false, yes;
+	no;
+
+A person can be sheathed. A person is usually not sheathed.
+
+Definition: A person (called x) is sheathed:
+	if CockName of Player is listed in infections of SheathedCockList, yes;
 	no;
 
 A person can be knotted. A person is usually not knotted.
@@ -1966,6 +1959,11 @@ Table of New Infection Parts
 Species Name	Name	Body Weight	Body Definition	Androginity	Head Change	Head Description	Head Adjective	Head Skin Adjective	Head Color	Head Adornments	Hair Length	Hair Shape	Hair Color	Hair Style	Beard Style	Body Hair Length	Eye Color	Eye Adjective	Mouth Length	Mouth Circumference	Tongue Adjective	Tongue Color	Tongue Length	Torso Change	Torso Description	Torso Adjective	Torso Skin Adjective	Torso Adornments	Torso Color	Torso Pattern	Breast Adjective	Breast Size	Male Breast Size	Nipple Count	Nipple Color	Nipple Shape	Back Change	Back Adornments	Back Skin Adjective	Back Color	Arms Change	Arms Description	Arms Skin Adjective	Arms Color	Locomotion	Legs Change	Legs Description	Legs Skin Adjective	Legs Color	Ass Change	Ass Description	Ass Skin Adjective	Ass Color	Ass Width	Tail Change	Tail Description	tail skin adjective	Tail Color	Asshole Depth	Asshole Tightness	Asshole Color	Cock Change	Cock Description	Cock Adjective	Cock Color	Cock Count	Cock Girth	Cock Length	Ball Description	Ball Count	Ball Size	Cunt Change	Cunt Description	Cunt Adjective	Cunt Color	Cunt Count	Cunt Depth	Cunt Tightness	Clit Size
 "Anthro Dragon"	"Anthro Dragoness"	4	8	7	"your face draws forward into a reptilian snout, covered in black overlapping scales"	"a sharp-toothed anthro dragoness"	"draconic"	"scaly"	"black"	"pair of spiraling horns"	0	"straight"	"black"	"ponytail"	""	0	"crimson"	"slitted"	10	10	"broad"	"purple"	7	"your torso broadens, with overlapping black scales growing out of your skin to give it an armor-plated look"	"broad, covered in overlapping black scales"	"draconic"	"scale-covered tummy"	"scaled"	"black"	"layered"	"perky"	5	0	2	"scarlet"	"oval"	"a pair of leathery black wings sprout from your upper back, unfolding to stretch wide to your left and right"	"the pair of leathery wings growing from beneath your shoulderblades"	"scaled"	"black"	"sharp claws sprout from the tips of your fingers and black scales form on the outside of your arms"	"long and plated in overlapping black scales, ending in clawed hands"	"scaled"	"black"	"bipedal"	"black scales garb them into overlapping armor and sharp scales form on your feet"	"long and plated in overlapping black scales, ending in clawed feet"	"scaled"	"black"	"it widens and flexible scales grow to cover its curves"	"ass, covered in flexible black scales"	"scaled"	"black"	4	"A long tail sprouts from your lower back, forming black scales and a spade at the end"	"long, black-scaled tail ending in a spade"	"scaled"	"black"	10	3	"black"	"ridges form along the underside of the shaft, leading up to a pointed tip"	"has a pointed tip and a number of ridges along the underside of the shaft"	"draconic"	"scarlet"	0	0	0	"balls in a firm sack of leathery skin"	0	0	"it takes on a triangular shape, with the clit at the lowest point"	"draconic"	"scarlet"	"triangular in shape, with its clit at the lower point"	1	14	6	3
 
+When Play begins:
+	add "Anthro Dragoness" to infections of ReptileList;
+	add "Anthro Dragoness" to infections of OviImpregnatorList;
+	add "Anthro Dragoness" to infections of TailweaponList;
+
 understand the command "feed" as something new.
 
 Definition: A person is fastlearning:
@@ -2168,10 +2166,10 @@ when play begins:
 
 when play begins:
 	add { "Bottlenose Toy", "Feral Sea Dragon", "Feral Sea Dragoness", "Dolphin Herm", "Killer Whale", "Shark Herm", "Platypus", "Sea Otter", "Gator Herm" } to infections of SwimList;
-]
 
 when play begins:
 	add { "Frost Drake", "Avalon Kobold" } to infections of OviImpregnatorList;
+]
 
 
 Part 2 - Rules
@@ -2678,7 +2676,7 @@ an everyturn rule:
 					increase PresentChance by 1;
 				if a random chance of PresentChance in 10 succeeds: [got a present]
 					add "offspring present" to invent of Bunker;
-			if HP of Blake > 50 and HP of Blake < 90 and a random chance of 1 in 2 succeeds: [Blake whoring]
+			if HP of Blake > 50 and HP of Blake < 90 and a random chance of 1 in 2 succeeds and Energy of Blake < 9: [Blake whoring]
 				increase Energy of Blake by 1; [add on one profit share of whoring him out]
 		now LastTurnDay is true;
 		if WerewolfWatching is true: [she's only out at night]
@@ -2909,26 +2907,10 @@ To process (x - a grab object):
 			now Lastjournaluse is turns;
 		follow turnpass rule;
 	else if x is a armament:
-		if weapon of Player is weapon of x:		[unequip]
-			now weapon of Player is "[one of]your quick wit[or]your fists[or]a quick kick[or]your body[or]some impromptu wrestling[or]an unarmed strike[at random]";
-			now weapon damage of Player is 4;
-			now weapon type of Player is "Melee";
-			now weapon object of Player is journal;
-			say "You stop holding your [x].";
+		if weapon object of Player is x: [unequip]
+			unwield x;
 		else: [equip]
-			now weapon object of Player is x;
-			now weapon of Player is weapon of x;
-			now weapon damage of Player is weapon damage of x;
-			now weapon type of Player is weapon type of x;
-			if x is ranged:
-				now weapon type of Player is "Ranged";
-			say "You ready your [x]";
-			if x is unwieldy:
-				if scalevalue of Player > objsize of x:
-					say ". Your [if scalevalue of Player is 3]normal-size[else if scalevalue of Player is 4]large[else]massive[end if] [BodyName of Player] hand dwarfs the [x], making it [if scalevalue of Player - objsize of x > 3]very[else if scalevalue of Player - objsize of x is 3]rather[else]somewhat[end if] [one of]unwieldy[or]awkward[or]difficult[at random] to use accurately";
-				else:
-					say ". Your [if scalevalue of Player is 3]normal-size[else if scalevalue of Player is 2]small[else]tiny[end if] [BodyName of Player] hands are just too small to comfortably grip your [x], making swinging it a [if objsize of x - scalevalue of Player > 3]very[else if objsize of x - scalevalue of Player is 3]quite[else]a little[end if] [one of]unwieldy[or]awkward[or]difficult[at random]";
-			say ".";
+			wield x;
 	else if x is equipment:
 		if x is equipped: [unequip]
 			if x is not cursed: [explanation why the item can't be taken off is to be done in the item description]
@@ -3956,7 +3938,7 @@ to OldInfectionRoll: [old infections with less body parts made before 07.05.2019
 			say "Genital infection imminent";
 		say ", Allow?";
 		if Player consents:
-			say "Ok.";
+			say "OK.";
 		else:
 			say "You wave a tiny microwave transmitter over the affected area. Ahhh, all clean!";
 			stop the action;
@@ -4121,7 +4103,7 @@ to NewInfectionRoll:
 				say "Feminine genital infection imminent";
 		say ", Allow?";
 		if Player consents:
-			say "Ok.";
+			say "OK.";
 		else:
 			say "You wave a tiny microwave transmitter over the affected area. Ahhh, all clean!";
 			stop the action;
@@ -4376,14 +4358,6 @@ to attributeinfect:		[sets the player values from the new attributes]
 		now SleepRhythm of Player is 1; [day-preferred]
 	else:
 		now SleepRhythm of Player is 0; [standard]
-
-To attributeinfect (x - text):
-	repeat with y running from 1 to number of filled rows in Table of Random Critters:
-		choose row y in Table of Random Critters;
-		if Name entry exactly matches the text x, case insensitively:
-			now MonsterID is y;
-			attributeinfect;
-			break;
 
 To Vialchance (x - a text):
 	choose row MonsterID from Table of Random Critters;
@@ -4935,8 +4909,8 @@ This is the turnpass rule:
 		if number of filled rows in Table of PlayerChildren > 0 and a random chance of 1 in 2 succeeds, increase hunger of Player by 1;
 		if "Spartan Diet" is listed in feats of Player and hunger of Player > 0 and a random chance of 1 in 2 succeeds:
 			decrease hunger of Player by 1;
-	if "Vore Predator" is listed in feats of Player:
-		increase hunger of Player by a random number between 1 and 5;
+	if "Vore Predator" is listed in feats of Player and scalevalue of Player > 1:
+		increase hunger of Player by a random number between 1 and (1 + scalevalue of Player);
 		if "Spartan Diet" is listed in feats of Player and hunger of Player > 0 and a random chance of 1 in 2 succeeds:
 			decrease hunger of Player by 1;
 	if a random number from 1 to 25 > ( a random number between 1 and ( stamina of Player + 1 ) ):
@@ -6103,7 +6077,13 @@ to weakrandominfect: [does not bypass researcher protection]
 			break;
 		infect;
 
-to setmonster ( x - text ): [puts an infection (named x) as lead monster for later use]
+to setmonster ( x - text ):
+	setmonster x silence state is 0;
+
+to setmonster ( x - text ) silently: [suppresses the debug output]
+	setmonster x silence state is 1;
+
+to setmonster ( x - text ) silence state is (Silence - a number): [puts an infection (named x) as lead monster for later use]
 	let found be 0;
 	choose row MonsterID in the Table of Random Critters;
 	if Name entry exactly matches the text x, case insensitively:
@@ -6117,7 +6097,7 @@ to setmonster ( x - text ): [puts an infection (named x) as lead monster for lat
 				break;
 	if found is 0:
 		say "ERROR - Creature '[x]' not found. (setmonster)[line break]";
-	else if debugactive is 1:
+	else if debugactive is 1 and Silence is 0:
 		say "DEBUG: Current [']monster['] set to: [MonsterID] = [Name entry][line break]";
 
 Section x - Debug Commands - Not for release
@@ -6407,7 +6387,9 @@ Include Dmitri the Peacock by Aureas Gigas.
 Include Dry Plains Events by Stripes.
 Include Endings by Darthan.
 Include E-shocker by Stripes.
+Include Eva by Kurainyx.
 Include Event Rewrites by Draegon.
+Include Exploration Events by Kurainyx.
 Include Extra Added Scenes by Kaleem mcintyre.
 Include Extra College Events by Speedlover.
 Include Fair Events by Sarokcat.
@@ -6470,13 +6452,11 @@ Include Park Events by Sarokcat.
 Include Patreon Menu by Stripes.
 Include Pepperspray by Stripes.
 Include Pet Shop by Wahn.
-[Include Pursuit of Science by Kaleem Mcintyre.]
 Include Qytat Shifters by Hellerhound.
 Include Random Events by Hiccup.
 Include Rane Events by KorekaBii.
 Include Recordings by Wahn.
 Include Red Events by Stripes.
-[Include Researcher Studio by Kaleem Mcintyre.]
 Include Reservoir by Kaleem Mcintyre.
 Include Rubber Sneakers by Kernog.
 Include Satyr Frat by Wahn.
@@ -6875,12 +6855,12 @@ Include Doran by Blue Bishop.
 Include DrMoffatt by Stripes.
 Include DrUtah by Stripes.
 Include Duke by Wahn.
+Include Dullahan by Gherod.
 Include Egyptian Wing by Xenophiliac.
 Include Elijah by Wahn.
 Include Eric by Wahn.
 Include Eric Loyalty by Luneth.
 Include Erica by Wahn.
-Include Exploration Events by Kurainyx.
 Include Fancy by Sarokcat n Verath.
 Include Fang by Prometheus.
 Include Farmhands by Wahn.
@@ -6902,6 +6882,7 @@ Include Hadiya by Stripes.
 Include Hanu by Kernog.
 Include Harold by Sarokcat.
 Include Hayato by Stripes.
+Include Help Book by Prometheus.
 Include HornyHorsey by femtoAmpere.
 [Include Horus by Rikaeus.]
 Include Hungry Boar Man by Closerhenry.
@@ -6934,21 +6915,25 @@ Include Kyrverth by Speedlover.
 Include Lance by Verath.
 Include Landon by Luneth.
 Include Larissa by Stripes.
+Include Leon by Luneth.
 Include Leonard by Stripes.
 Include Lilith by Wahn.
 Include Lindsey by Sarokcat.
+Include Lingau by Wahn.
 Include Logan by Wahn.
 Include Lucy by Stripes.
 Include Lux & Umbra by Prometheus.
 Include Mack by Stripes.
 Include Malik by Wahn.
 Include Mark by Wahn.
+Include Mary by Luneth.
 Include Master Mind by Stripes.
 Include Matriarch NPC by Stripes.
 Include Meredith by Stripes.
 Include Micaela by Stripes.
 Include Midnight by Sarokcat.
 Include Milo by CrimsonAsh.
+Include Monty by Wahn.
 Include Mouse Taur by Nuku Valente.
 Include Pet Mutt by CrimsonAsh.
 Include Nadia by Wahn.

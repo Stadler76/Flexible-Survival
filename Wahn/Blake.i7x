@@ -131,11 +131,12 @@ instead of going east from Smith Haven Mall Lot East while (HP of Blake < 50):
 				LineBreak;
 				say "     You stumble away, leaving the dark alley behind. It is a bit of a relief to go out into the open area of the parking lot, but somehow you can't shake the feeling of something oily having touched your mind.";
 				[Note: No actual compulsion, just freaking the player out a bit]
-				now HP of Blake is 1; [rejected by Blake or refused him]
+				now HP of Blake is 99; [rejected by Blake]
 				move player to Smith Haven Mall Lot East; [player is thrown out after each scene]
 			else if calcnumber is 2:
 				LineBreak;
 				say "     Reaching up to grab your head, you concentrate hard on who and what you are, trying to shake off what Blake did to you. As you stumble out into the open space of the parking lot, it feels like his influence is lifting bit by bit and you feel more like yourself again.";
+				now HP of Blake is 99; [rejected by Blake]
 				move player to Smith Haven Mall Lot East; [player is thrown out after each scene]
 			else:
 				LineBreak;
@@ -183,7 +184,7 @@ instead of going east from Smith Haven Mall Lot East while (HP of Blake < 50):
 			else:
 				LineBreak;
 				say "[BlakeCounterstrike]";
-	else if HP of Blake is 1 or (HP of Blake is 99 and player is male): [refused him before /sent away as non-male before]
+	else if (HP of Blake is 1 or HP of Blake is 99): [refused him before /sent away as non-male before]
 		if Player is not male:
 			say "     As you walk up to him, Blake grins broadly and gets up, then comes up to you and moves uncomfortably close. The musk that clings to him like a shroud wafts thickly in your nose, making it harder and harder to concentrate. 'Hmm... you want to expose yourself to me. Urgently,' he states in his deep, resonating voice, grinning at you with that ever-present mischief. Your body reacts immediately, completely bypassing your sluggish mind as it does what Blake told you to do. Despite this, he's less than pleased when he sees that you're not the least bit male, snapping out the harsh words, 'Ah, fuck off! You can come back when you're a dude.'";
 			now HP of Blake is 99;
@@ -232,7 +233,7 @@ instead of going east from Smith Haven Mall Lot East while (HP of Blake < 50):
 				SanLoss 15;
 				WaitLineBreak;
 				if humanity of player < 10:		[Cock vore bad end]
-					say "     Every breath you take is a lungful of the rodent's alluring musk, and his balls continue to churn and cover every inch of you with the potent cum, quashing the last of your thoughts until you can think of nothing more than having the honor of worshipping Blake from within him. With one last cry of ecstasy, everything you know and feel melts away into unending bliss as you sink into the sticky seed. 'You were really fun, slut,' Blake says as he feels your wriggling die down. One of his hands starts jacking off his now-massive cock while the other rubs his giant, overfilled balls. 'You liked my cock so much and now you're going to make it bigger and better.'";
+					say "     Every breath you take is a lungful of the rodent's alluring musk, and his balls continue to churn and cover every inch of you with the potent cum, quashing the last of your thoughts until you can think of nothing more than having the honor of worshiping Blake from within him. With one last cry of ecstasy, everything you know and feel melts away into unending bliss as you sink into the sticky seed. 'You were really fun, slut,' Blake says as he feels your wriggling die down. One of his hands starts jacking off his now-massive cock while the other rubs his giant, overfilled balls. 'You liked my cock so much and now you're going to make it bigger and better.'";
 					say "     The horny rodent continues to pleasure himself until with a lustful groan, he experiences his biggest climax ever. His orgasm lasts for a while, torrents of white spunk spraying all over the ground and the nearby walls, and when it finally ends, Blake collapses onto the ground with a tired but satisfied smirk. Although his dick and balls had shrunken back down after expelling your cummy remains, they're clearly bigger now, thanks to your [italic type]contribution[roman type], making them all the more enticing for the alluring rat to lure in more people for him to exploit.";
 					WaitLineBreak;
 					now voreloss is true;
@@ -456,7 +457,6 @@ to say BlakeWhoreSexMenu:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Jerk him, but deny orgasm":
 					say "[BlakeSex1]";
@@ -505,7 +505,7 @@ to say BlakeSex4: [jerking off ON Blake]
 	say "     You kneel down on the ragged bedding that Blake is stretched out on. After telling him with a smile on your face that it's you who'll make use of him this time, you reach out and cup his furry balls, giving them a relatively gentle squeeze. Blake squirms a bit, mumbling into his ball-gag, but doesn't struggle any more than that as you take hold of his still soft uncut cock. Fingers wrapping around the fairly well-sized member, you start jerking it, with some squeezing and rubbing putting your rodent whore into an aroused state before much longer. Soon, you've got his manhood fully hard and standing straight up like a pole, pulsing slightly from the beat of his heart as it sends blood to this priority. Setting down your other hand on the furry globes of his balls, you stroke and fondle your helpless rat a bit, grinning as you push the unwilling captive closer and closer to orgasm.";
 	say "     Yet as you sense that the rat is close to blasting a load all over the fur of his chest, you just let go of his shaft, watching it slap against his flat abs with a satisfying thud. And that is when you [if Player is not naked]quickly strip off your clothes and gear, then [end if]take hold of your own erect shaft. In a teasing voice, you tell him that he's really a whore through and through if he's this hard for what you'll do next, a cruel joke on the rat as he has no idea, being blindfolded and all. The actual indication of your plans for him is when you slap Blake's muzzle with your by now rock-hard shaft, laughing as he flinches from the sudden touch. Grabbing a handful of his hair, you hold him firm as you rub his face with your dick, wiping the drops of pre-cum it is leaking off onto him. He squirms as if to escape you, but of course, there's little chance of that, with his hands cuffed behind his back and a spreader bar between his legs.";
 	WaitLineBreak;
-	say "     After a while of revelling in your dominance over the street rat, you feel a familiar tightness rise in your balls. Having such power can really go to someone's head, and your arousal is aflame with it right now. With a chuckle, you comment on the fact that his dick is still almost as hard as before. He can't really help it, not with how close to orgasm you pushed him, but you rub it in nonetheless, saying that him staying hard has earned him a special honor from his [master]. With that said, you start jerking yourself off in earnest, soon pushing yourself over the edge and starting to cum - right onto Blake's face. Gleefully aiming your [Cock of Player] shaft, you hit his face with spurt after spurt of creamy seed, even as he tries to turn it away from you. Grabbing a handful of his hair and giving that a sharp tug puts a stop to his attempts at evasion, allowing you to give his gagged and blindfolded face a more or less even facial with cum.";
+	say "     After a while of reveling in your dominance over the street rat, you feel a familiar tightness rise in your balls. Having such power can really go to someone's head, and your arousal is aflame with it right now. With a chuckle, you comment on the fact that his dick is still almost as hard as before. He can't really help it, not with how close to orgasm you pushed him, but you rub it in nonetheless, saying that him staying hard has earned him a special honor from his [master]. With that said, you start jerking yourself off in earnest, soon pushing yourself over the edge and starting to cum - right onto Blake's face. Gleefully aiming your [Cock of Player] shaft, you hit his face with spurt after spurt of creamy seed, even as he tries to turn it away from you. Grabbing a handful of his hair and giving that a sharp tug puts a stop to his attempts at evasion, allowing you to give his gagged and blindfolded face a more or less even facial with cum.";
 	say "     And that is how you leave the rat, the fur of his face plastered to his features with your seed. As you step away from his ratty bedding, the captive rodent rolls over and starts to grind his face against the already fairly stained sheets, adding another smeared cum-stain to it as he tries to clean himself off. Pretty much on its own accord, the thought of how far Blake has fallen crops up in your mind: From a mind-controlling king of his own dirty little alley to now just being your tied-up whore, to be used by anyone who wants some quick release. One could almost call it a cautionary tale about not trying to take on people as powerful and ruthless as yourself. Shrugging off the idle wondering, you get back to other matters, albeit still with a smile on your face.";
 
 to say BlakeSex5: [fucking Blake's ass]

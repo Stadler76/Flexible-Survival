@@ -22,6 +22,7 @@ an everyturn rule: [bugfixing rules for players that import savegames]
 					now MonsterID is y;
 					now area entry is "Forest";
 					break;
+			now GarthInfectionArea is 1; [his area was fixed]
 		if GarthRelationship > 0: [agreed to get fucked without fighting]
 			repeat with y running from 1 to number of filled rows in Table of Random Critters:
 				choose row y in Table of Random Critters;
@@ -29,6 +30,7 @@ an everyturn rule: [bugfixing rules for players that import savegames]
 					now MonsterID is y;
 					now area entry is "Nowhere";
 					break;
+			now GarthInfectionArea is 1; [his area was fixed]
 
 
 Section 1 - Events
@@ -352,7 +354,6 @@ to say GarthAndySexMenu:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Take Garth from behind":
 					say "[GarthAndySex1]";
@@ -553,7 +554,6 @@ to say RazorbackBoarSexMenu:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Take him from behind":
 					say "[RazorbackBoarSex1]";

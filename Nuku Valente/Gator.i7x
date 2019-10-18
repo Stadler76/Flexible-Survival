@@ -106,6 +106,7 @@ When Play begins:
 	add "Gator Herm" to infections of TaperedCockList;
 	add "Gator Herm" to infections of SheathedCockList;
 	add "Gator Herm" to infections of BipedalList;
+	add "Gator Herm" to infections of SwimList;
 	add "Gator Herm" to infections of TailList;
 	add "Gator Herm" to infections of TailweaponList;
 	now Name entry is "Gator Herm"; [Name of your new Monster]
@@ -357,7 +358,6 @@ to say gator den scene:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Spend time with the gator":
 					say "[GatorDenSex]";

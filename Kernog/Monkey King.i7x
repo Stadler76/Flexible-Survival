@@ -70,7 +70,7 @@ to say losetoMonkeyKing:
 					else:
 						say "     Having you lay on your back, he frots his lithe body against yours. His mouth locks with your own in a sloppy kiss while his hands explore your chest. You feel your cocks quickly grow from arousal and touch each other. After a few minutes, the simian creature breaks the kiss and sits on your lap. 'Now, let's get serious,' says the golden-furred lover as he aligns his ass with your cock and lets himself slowly fall down. He moans loudly. You moan as well, as his insides feel like silk on your [CockName of Player] dick. Then he pushes up, only to let himself fall down on your lap, and so on.";
 						say "     The two of you quickly build a steady rhythm and you even start pushing up against your partner's ass. Suddenly, you muffle in surprise as the flexible creature puts one of his foot against your face, his toes entering your mouth. 'Lick, peasant,' he orders smugly. To his great pleasure, you comply and start to lick the sole of his prehensile foot and suck on his toes.";
-						say "     After long minutes of this treatment, worshipping one foot, then the other, you feel the monkey's ass tighten as he reaches his climax and splatters your chest with long ropes of sperm, almost gagging you as his foot reflexively slips further in your mouth. The vice-like pressure on your cock makes you cum as well and your partner makes sure to milk you of everything you've got. The satisfied monkey takes his leave in a short, taunting victory dance.";
+						say "     After long minutes of this treatment, worshiping one foot, then the other, you feel the monkey's ass tighten as he reaches his climax and splatters your chest with long ropes of sperm, almost gagging you as his foot reflexively slips further in your mouth. The vice-like pressure on your cock makes you cum as well and your partner makes sure to milk you of everything you've got. The satisfied monkey takes his leave in a short, taunting victory dance.";
 			else:
 				say "     The monkey sighs as you lack anything he could play with. 'Aw... Too bad. I won't be able to grace you with the exquisite pleasure of my carnal skills.' With these words, he leaves you, panting and laying on the ground, as he looks for another victim to satiate his lust.";
 
@@ -473,17 +473,13 @@ instead of resolving Hunt Of Mammoth Proportions:
 			say "     The two of you get off the tired mammoth, and leave her dazed on the floor. Wukong leads you to his lair, and washes his cum-stained fur in a small artificial pond that had been installed for the exposition. He invites you to take a bath as well, and you eventually wash each other's back while talking about today's battle. 'I cannot find higher praises to give you, my friend,' Wukong says as the both of you begin to dry off. 'And so, I wish to reward you properly.'";
 			say "     'You are skilled, but your moves and your stance are a mess. You need proper lessons in kung fu. Let me give you some tips.' And so, you spend the next hours learning basic martial art moves under Wukong's tutoring. It is not much, but the experience that you have accumulated over the past days gives you the feeling that they will be extremely useful.";
 			if "Martial Artist" is not listed in feats of Player:
-				say "[bold type]You receive the martial artist feat.[roman type]";
-				add "Martial Artist" to feats of Player;
+				FeatGain "Martial Artist";
 			else if "Black Belt" is not listed in feats of Player:
-				say "[bold type]You receive the black belt feat.[roman type]";
-				add "Black Belt" to feats of Player;
+				FeatGain "Black Belt";
 			else if "Natural Armaments" is not listed in feats of Player:
-				say "[bold type]You receive the Natural Armaments feat.[roman type]";
-				add "Natural Armaments" to feats of Player;
+				FeatGain "Natural Armaments";
 			else:
-				say "[bold type]You receive one dexterity point[roman type]";
-				increase dexterity of Player by 1;
+				StatChange "Dexterity" by 1;
 			say "     You part ways with the monkey king, and in good terms, for once. You hope that it will last.";
 			now Loyalty of Wukong is 2;
 			now Resolution of Hunt Of Mammoth Proportions is 1; [fought + won]
@@ -651,7 +647,6 @@ instead of fucking Wukong:
 				say "[title entry]: [description entry]?";
 				if Player consents:
 					let nam be title entry;
-					clear the screen and hyperlink list;
 					now sextablerun is 1;
 					if nam is "Train":
 						say "[WukongTrainingTrain]";

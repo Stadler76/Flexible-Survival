@@ -190,7 +190,6 @@ to say ChrisTalkMenu:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Himself":
 					say "[ChrisTalk1]";
@@ -279,7 +278,6 @@ Instead of fucking the Chris:
 				say "[title entry]: [description entry]?";
 				if Player consents:
 					let nam be title entry;
-					clear the screen and hyperlink list;
 					now sextablerun is 1;
 					if nam is "Get a blowjob from Chris":
 						say "[ChrisSex1]";
@@ -420,8 +418,8 @@ to say ChrisSex4: [Chris fucks the player]
 		say "     Your mutual climaxes rock though the two of you, only slowly ebbing off as Chris still humps against you in a determined pace, but even though both of you wish to just keep going, eventually things run out of steam and you quiet down, only panting hanging in the air for a moment. 'Damn, that was amazing,' Chris says with obvious affection in his voice, then adds, 'I wanna fuck you again - and soon.' He gives another little thrust of his hips against your rear, then licks the side of your neck and nibbles on you, his tusks lightly nipping your skin. Between the orc's amorous advances, a big load of his potent cum inside your ass and his hands stroking and groping your body, you barley have time to really think - your mind lost in a lustful haze. But then, why not just enjoy the moment and let your problems melt away for now...";
 		if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 			LineBreak;
-			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-			add "MPreg" to feats of Player;
+			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+			FeatGain "MPreg";
 		NPCSexAftermath Player receives "AssFuck" from Chris;
 	else if Libido of Chris is 1:
 		setmonster "Orc Breeder";
@@ -442,13 +440,12 @@ to say ChrisSex4: [Chris fucks the player]
 		infect "Orc Breeder";
 		if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 			LineBreak;
-			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-			add "MPreg" to feats of Player;
+			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+			FeatGain "MPreg";
 		if Player is mpreg_able: [can become mpregnant]
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 			if Player is mpreg_now: [has become pregnant]
-				say "[bold type]'Chris's Breeder Slut' has been added to your feats![roman type][line break]";
-				add "Chris's Breeder Slut" to feats of Player; [orc baby, no matter what]
+				FeatGain "Chris's Breeder Slut"; [orc baby, no matter what]
 		else:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 		increase WarriorChrisPlayerFucked by 1;
@@ -570,15 +567,14 @@ instead of going up from Grey Abbey Library while (Chris is in Sitting Area and 
 		say "     'A belly full of my seed just for you,' Chris pants, 'You better savor every second of it. Otherwise you won't get another.' After that he pulls his cock out of you. With a wet plop his tip escapes from your abused hole along with a small river of his cum. The orc pauses to take a look at the mess he made of you, then stands up straight and pulls you against his chest possessively. 'This is my breeder slut now! Hear that you fuckers and weaklings?! I bet not even half of you could even take my dick!' the young orc warrior bellows as he looks to the various creatures that have been masturbating to the show. Several of them start to look worried about maybe being next - which greatly amuses Chris. 'Yeah, you better be afraid - when I'm done training this one and knocking [if Player is male]him[else if Player is female]her[else]him[end if] up, I'll come looking for more sluts to add to my harem!";
 		say "     After a bit more boasting and intimidation, the orc eventually puts his loincloth back on. He gives your as a hard smack telling you that you should follow him back to the bunker. You slowly push yourself off the car and gingerly walk with him back to the bunker and putting your gear back on once you return.";
 		infect "Orc Breeder";
-		if BodyName of Player is "Orc Breeder" and player is pure and player is not mpreg_ok:
+		if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 			LineBreak;
-			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-			add "MPreg" to feats of Player;
+			say "     You feel something change deep inside you, as all the cum Chris blasted into you with completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+			FeatGain "MPreg";
 		if Player is mpreg_able:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 			if Player is mpreg_now: [has become pregnant]
-				say "[bold type]'Chris's Breeder Slut' has been added to your feats![roman type][line break]";
-				add "Chris's Breeder Slut" to feats of Player; [orc baby, no matter what]
+				FeatGain "Chris's Breeder Slut"; [orc baby, no matter what]
 		else:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 		increase WarriorChrisPlayerFucked by 1;
@@ -604,10 +600,10 @@ instead of going up from Grey Abbey Library while (Chris is in Sitting Area and 
 	say "     This corner of the library kinda starts to reek of sex as he continues to hump you on the sofa, and the sounds of the rough pounding echo throughout the whole library. His cock slides along your insides rubbing more of his precum against your walls. 'I'm going to cummmmm,' Chris bellows in arousal, then pulls out his cock and splatters your ass and back with blast after blast of creamy cum. By the time Chris's orgasm subsides, you're literally drenched in his seed. This leaves you rather sticky and wet, but it still somehow feels good. Something about being marked by your orc master and smelling of his cum just seems to click in your brain, giving you a nice boost in pleasure at this treatment.";
 	say "     Yet even though Chris got off, you still haven't. And after taking his thick rod, your back passage feels seems empty without him inside. Moving a hand to finger yourself back there to get off, you suddenly find your wrist grabbed by a strong hand. 'You don't get to cum slut,' Chris tells you, 'Only your master can cum. You can only cum if it's because of my cock, got it?' Slightly disappointed that you aren't allowed to get off unless he makes you, you look at him and nod. 'Now clean this mess up and leave,' he demands, 'I'll grab you the next time I want to get off.' Wiping yourself down as good as you can - after hungrily slurping the cum you scoop up from your fingers, you eventually go to grab your gear again and get dressed.";
 	infect "Orc Breeder";
-	if BodyName of Player is "Orc Breeder" and player is pure and player is not mpreg_ok:
+	if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 		LineBreak;
-		say "     You feel something change deep inside you, as all the cum Chris blasted over your body soaks into your skin and completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-		add "MPreg" to feats of Player;
+		say "     You feel something change deep inside you, as all the cum Chris blasted over your body soaks into your skin and completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+		FeatGain "MPreg";
 	NPCSexAftermath Player receives "AssDildoFuck" from Chris;
 	increase WarriorChrisPlayerFucked by 1;
 	now WarriorChrisDominance is 2; [player got pushed to be Chris's breeder slut - twice]
@@ -633,10 +629,10 @@ instead of going up from Grey Abbey Library while (Chris is in Sitting Area and 
 	WaitLineBreak;
 	say "     When you eventually come to again, you find yourself in an interesting and fairly pleasant position - lying against Chris's broad chest as he lounges on the couch he claimed has his own. Looking down, you see the orc's half hard cock between your legs - your naked legs, like the rest of your body. The orc is slowly stroking you, taking pleasure in feeling up his devoted breeder slut. 'Back awake, eh? Sorry, I guess - let things get a bit out of hand there. Take it as a compliment for you being such an amazing cum-slut!' The orc chuckles at his not-really apology, then fondles you some more before sending you off with a playful slap to the butt. You do find your clothes in an untidy heap not too far away, smelling of orc cum. Apparently he used them wipe his dick - and you - clean of his load.";
 	infect "Orc Breeder";
-	if BodyName of Player is "Orc Breeder" and player is pure and player is not mpreg_ok:
+	if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 		LineBreak;
-		say "     You feel something change deep inside you, as all the cum Chris blasted into your stomach completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-		add "MPreg" to feats of Player;
+		say "     You feel something change deep inside you, as all the cum Chris blasted into your stomach completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+		FeatGain "MPreg";
 	NPCSexAftermath Player receives "OralCock" from Chris;
 	increase WarriorChrisPlayerFucked by 1;
 	now WarriorChrisDominance is 3; [player got pushed to be Chris's breeder slut - three times]
@@ -663,8 +659,7 @@ instead of going up from Grey Abbey Library while (Chris is in Sitting Area and 
 		if Player is mpreg_able:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 			if Player is mpreg_now: [has become pregnant]
-				say "[bold type]'Chris's Breeder Slut' has been added to your feats![roman type][line break]";
-				add "Chris's Breeder Slut" to feats of Player; [orc baby, no matter what]
+				FeatGain "Chris's Breeder Slut"; [orc baby, no matter what]
 		else:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 		say "     You remember being carried and held, and when you eventually come to again fully, you find yourself in an interesting and fairly pleasant position - lying against Chris's broad chest as he lounges on the couch he claimed has his own. Looking down, you see the orc's half hard cock between your legs. Chris is slowly stroking you with one hand between your legs, the other one resting on your belly. He keeps brushing his finger over your pucker again and again, taking pleasure in feeling up his devoted breeder slut. 'Back awake, eh? You did good, breeder! Can't wait to see your belly bulge with my orcling.' The orc chuckles and leans his head forward to lick your cheek, then keeps you against his chest for a while longer, arms wrapped around your midriff. Eventually, he dozes off, giving you the opportunity of extracting yourself from his grasp and starting to collect the strewn about pieces of your gear.";
@@ -699,15 +694,14 @@ instead of going up from Grey Abbey Library while (Chris is in Sitting Area and 
 		WaitLineBreak;
 		say "     When you eventually come to again, you find yourself in an interesting and fairly pleasant position - lying against Chris's broad chest as he lounges on the couch he claimed has his own. Looking down, you see the orc's half hard cock between your legs - your naked legs, like the rest of your body. The orc is slowly stroking you with one hand between your legs, brushing his finger over your pucker again and again, taking pleasure in feeling up his devoted breeder slut. 'Back awake, eh? Sorry, I guess - let things get a bit out of hand there. Take it as a compliment for you being such an amazing cum-slut!' The orc chuckles at his not-really apology, then fondles you some more before sending you off with a playful slap to the butt. You do find your clothes in an untidy heap not too far away, smelling of orc cum. Apparently he used them wipe his dick - and you - clean of his load.";
 		infect "Orc Breeder";
-		if BodyName of Player is "Orc Breeder" and player is pure and player is not mpreg_ok:
+		if BodyName of Player is "Orc Breeder" and player is pure and "MPreg" is not listed in feats of Player:
 			LineBreak;
-			say "     You feel something change deep inside you, as all the cum Chris blasted into your stomach completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex. The [']MPreg['] feat has been added to your list.";
-			add "MPreg" to feats of Player;
+			say "     You feel something change deep inside you, as all the cum Chris blasted into your stomach completes your transformation to a real orc breeder. You'll now be able to be impregnated through anal sex.";
+			FeatGain "MPreg";
 		if Player is mpreg_able:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 			if Player is mpreg_now: [has become pregnant]
-				say "[bold type]'Chris's Breeder Slut' has been added to your feats![roman type][line break]";
-				add "Chris's Breeder Slut" to feats of Player; [orc baby, no matter what]
+				FeatGain "Chris's Breeder Slut"; [orc baby, no matter what]
 		else:
 			NPCSexAftermath Player receives "AssFuck" from Chris;
 		increase WarriorChrisPlayerFucked by 1;

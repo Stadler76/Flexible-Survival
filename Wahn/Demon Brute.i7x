@@ -600,7 +600,7 @@ The icon of demon brute is Figure of DemonBrute_icon.
 The weapon damage of demon brute is 8.
 The level of demon brute is 5.
 The Dexterity of demon brute is 9.
-The summondesc of demon brute is "     Holding your demontooth amulet tightly in your fist, you murmur the magic words Nermine told you. Swirling purple mist flows out of the demon fang's sharp tip, then solidifies in the musclebound figure of your [if DBCaptureQuestVar is 6 or DBCaptureQuestVar is 7]demon companion[else]captive demon brute[end if]. You tell him 'I want you to help me when I get into fights, ok?' In a [if DBCaptureQuestVar is 6 or DBCaptureQuestVar is 7]deep[else]growling[end if] voice, the demon answers 'Yes... master.'".
+The summondesc of demon brute is "     Holding your demontooth amulet tightly in your fist, you murmur the magic words Nermine told you. Swirling purple mist flows out of the demon fang's sharp tip, then solidifies in the musclebound figure of your [if DBCaptureQuestVar is 6 or DBCaptureQuestVar is 7]demon companion[else]captive demon brute[end if]. You tell him 'I want you to help me when I get into fights, OK?' In a [if DBCaptureQuestVar is 6 or DBCaptureQuestVar is 7]deep[else]growling[end if] voice, the demon answers 'Yes... master.'".
 The assault of demon brute is "[one of]The demon brute charges into combat, swinging wildly at your enemy in uncontrolled bloodlust![or]A loud roar of your demon brute frightens and distracts your enemy a moment - long enough for you to score a quick hit![or]Snarling, your demon brute slashes your enemy with his claws![at random]".
 the fuckscene of demon brute is "[sexwithdemonbrutepet]".
 
@@ -749,7 +749,6 @@ to say DBRelationshipTalkMenu:
 			say "[title entry]: [description entry]?";
 			if Player consents:
 				let nam be title entry;
-				clear the screen and hyperlink list;
 				now sextablerun is 1;
 				if nam is "Just chat a bit":
 					say "[DBTalk1]";
@@ -1503,7 +1502,7 @@ When Play begins:
 	now body change entry is "your arms and legs begin to grow longer and more muscular. Your chest widens as well.";
 	now skin change entry is "you begin to feel a strange burning sensation. You look down, and realize that your skin has turned a deep shade of purple";
 	now ass change entry is "you feel it becoming tighter, leaner, and more fit. This is followed by a strange feeling at the base of your spine, and then there is a very strange, and painful, burning sensation, as if your flesh is boiling and liquefying. The pain lasts for some time, but, when it finally subsides, you can feel your new, long demon tail sway back and forth behind you, equipped with a spaded tip and everything"; [ ass/tail change text. format as "Your ass feels funny as (your text)." ]
-	now cock change entry is "it begins to grow thicker, large bumps sprouting up all across its surface. At first, you think it is some sort of strange disease, but, then you realize that this entire thing is some sort of disease";
+	now cock change entry is "it begins to grow thicker, large bumps sprouting up all across its surface";
 	now str entry is 20;
 	now dex entry is 9;
 	now sta entry is 14;

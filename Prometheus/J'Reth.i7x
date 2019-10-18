@@ -1,10 +1,35 @@
-Version 1 of J'Reth by Prometheus begins here.
-[Commision for Heth Drakiel]
+Version 2 of J'Reth by Prometheus begins here.
+[Commission for Heth Drakiel]
+[ Version 1 - Initial Release]
+[ Version 2 - Talk Menu Added]
+
+
 [ hp of J'Reth             ]
 [ 0 - Unmet                ]
 [ 1 - Met in Storeroom     ]
 
-Section 1 - NPC
+
+J'RethRoomConnection is a number that varies.[@Tag:NotSaved]
+
+an everyturn rule:
+	if Invitation to Storeroom is resolved and J'RethRoomConnection is 0:
+		change the Northwest exit of Mall West Wing to J'Reth's Room; [connecting the location to the travel room]
+		change the Southeast exit of J'Reth's Room to Mall West Wing; [connecting the location to the travel room]
+		now J'RethRoomConnection is 1; [room connected]
+
+Section 1 - Room Declaration
+
+Table of GameRoomIDs (continued)
+Object	Name
+J'Reth's Room	"J'Reth's Room"
+
+J'Reth's Room is a room.
+The description of J'Reth's Room is "[J'RethsRoomDesc]".
+
+to say J'RethsRoomDesc:
+	say "     While J'Reth seems to be living in a storage closet at the back of a gaming store that is now filled with sleeping bags and mattresses, it is large enough for a bed, a desk, and several rows of shelves. The shelves are covered in tabletop models such as trolls, dragons, and wolves, rulebooks for assorted games, and small pots of paint. Considering what you know about J'Reth, the room seems to suit him very well. On the desk pushed into the corner against the wall is a computer but it doesn't appear to be plugged in so you doubt that the draco-mantis has used it recently. The walls are covered in promotional posters for various movies and games, colorful pins holding them in place.";
+
+Section 2 - NPC
 
 Table of GameCharacterIDs (continued)
 object	name
@@ -38,7 +63,7 @@ SexuallyExperienced of J'Reth is false.
 MainInfection of J'Reth is "".
 The description of J'Reth is "[J'RethDesc]".
 The conversation of J'Reth is { "Mantis Dragon sounds." }.
-The scent of J'Reth is "     J'Reth smells of Mantis-Dragons and fairies in the wood.".
+The scent of J'Reth is "     J'Reth smells of Mantis-Dragons and fairies in the woods.".
 
 to say J'RethDesc:
 	if debugactive is 1:
@@ -46,13 +71,87 @@ to say J'RethDesc:
 	say "     J'Reth is somewhat feminine but with some slight musculature to his frame. His body is covered in pale green scales all around with chitinous plates of a darker green around his chest, forearms, thighs, and shins.";
 
 
-Section 2 - Talking with J'Reth
-[There is a time and place for that. Like riding your bicycle inside.]
+Section 3 - Talking with J'Reth
 
-Section 3 - Sex
-[Sex? You barely know him.]
+Instead of conversing the J'Reth:
+	say "     You indicate to J'Reth that you would like to talk to him and he puts down the [one of]poster [or]model [or]comic [at random]that he was examining at devotes his attention to you.";
+	WaitLineBreak;
+	say "[J'RethTalkMenu]";
 
-Section 4 - Events
+to say J'RethTalkMenu:
+	say "[line break]";
+	say "What do you wish to discuss with J'Reth?";
+	now sextablerun is 0;
+	blank out the whole of table of fucking options;
+	[]
+	choose a blank row in table of fucking options;
+	now title entry is "Hobbies";
+	now sortorder entry is 1;
+	now description entry is "Try to learn more about what the draco-mantis enjoys doing";
+	[]
+	choose a blank row in table of fucking options;
+	now title entry is "Before the Outbreak";
+	now sortorder entry is 2;
+	now description entry is "Ask what he did before the nanite outbreak";
+	[]
+	choose a blank row in table of fucking options;
+	now title entry is "Small Talk";
+	now sortorder entry is 3;
+	now description entry is "Make general small talk";
+	[]
+	sort the table of fucking options in sortorder order;
+	repeat with y running from 1 to number of filled rows in table of fucking options:
+		choose row y from the table of fucking options;
+		say "[link][y] - [title entry][as][y][end link][line break]";
+	say "[link]0 - Nevermind[as]0[end link][line break]";
+	while sextablerun is 0:
+		say "Pick the corresponding number> [run paragraph on]";
+		get a number;
+		if calcnumber > 0 and calcnumber <= the number of filled rows in table of fucking options:
+			now current menu selection is calcnumber;
+			choose row calcnumber in table of fucking options;
+			say "[title entry]: [description entry]?";
+			if Player consents:
+				let nam be title entry;
+				now sextablerun is 1;
+				if (nam is "Hobbies"):
+					say "[J'RethTalk1]";
+				if (nam is "Before the Outbreak"):
+					say "[J'RethTalk2]";
+				if (nam is "Small Talk"):
+					say "[J'RethTalk3]";
+				WaitLineBreak;
+		else if calcnumber is 0:
+			now sextablerun is 1;
+			say "     You shake your head, stating that you simply wanted to make sure he was alright. He gives you a brief smile of appreciation before returning to what he was doing.";
+			WaitLineBreak;
+		else:
+			say "Invalid Option. Pick between 1 and [the number of filled rows in the table of fucking options] or 0 to exit.";
+	clear the screen and hyperlink list;
+
+to say J'RethTalk1: [Hobbies]
+	say "     You enquire about what J'Reth's hobbies are, earning a pleased smile in return. 'I'm glad that you asked. If you look around, you'll see all the miniatures from assorted tabletop role-playing games as well as my collection of rulebooks, bestiaries, tomes of lore, dice, pens, pencils... I'm going overboard, aren't I?' He gives a sheepish grin, but you wave your hand dismissively. You did ask, and his enthusiasm is admirable. 'I've been playing Kastles & Kobolds for a few years, so each time they release an expansion, I sort of feel like I need to get it. And I know what you're thinking, but it isn't just kobolds. There are lots of different races that you can be. Elves of various alignments, dwarves, elementals, beastfolk... there are lots. Sorry if I'm a little defensive. I was teased about it when I was younger.' You nod in understanding as you pick up a model of what looks like a troll from the shelf, angling it in the limited light to have a look at the finer details.";
+	say "     'If you're looking to see if it is anatomically correct then I'm sorry that I must disappoint you. They aren't. I checked when I first got them,' J'Reth informs you, and you grin at him as, realizing what he has said, a blush spreads across his features. You hear him mumble, 'I really need to learn to keep my mouth shut sometimes.' In an effort to shift the conversation from the disgraceful lack of genitals on his troll, the draco-mantis continues explaining his other hobbies. 'While the shortage of electricity in the city currently prevents it, I also liked playing video games. I wouldn't say that I was particularly amazing, but I got to the point that the people that I regularly played things with over the internet weren't always complaining and I even got a few compliments. I'm not sure whether to hope that the rest of the world is aware what is happening in the city or that the military has managed to keep it secret. On the one hand, I don't want my friends to think that I am avoiding them, but equally, I don't want them to be worried about me.'";
+	WaitLineBreak;
+	say "     'I doubt that the world is ignorant of what is happening here. There was a lot of time for people to call for help or warn people on the internet before we were cut off...' J'Reth falls silent for a moment, seemingly musing on his words. ' Sorry, we were talking about video games, weren't we? There were only a few multiplayer-focused games that I played. I mostly did single player RPGs like the Ancient Tomes series. The older ones were good, but the character customization in the later ones really allowed me to immerse myself. Not looking like I had a box for a head was definitely a bonus. Unfortunately, with the current power problem, I haven't been able to play since the outbreak as, you know, computers need electricity. At least I still have Kastles and Kobolds, but that is more fun with friends. I don't suppose you have any other friends that might be interested. I'd be happy to GM.' While you can't think of anyone at the moment, you agree to mention it to some of the people that you know just in case.";
+	say "     'Thanks, that means a lot. Ummm what else... Oh! I don't know how I forgot, but I'm also a huge fan of (Backpackemon?), the creature collecting game. I know that you're meant to battle, but I found the collecting and spending time with them to be much more fulfilling. Why would anyone want to hurt such adorable little monsters? I sort of look like my favorite one of them now, my favorite to be honest, so whatever it is that has caused this does have some benefits despite all the destruction that it has wrought. I suppose that you could say that I like watching movies too, but it isn't in the same league as KnK or gaming. Why is it when someone asks you what you enjoy doing you always sound boring or like a geek?' Considering that he has shared quite a bit about his hobbies, you reassure him that it is enough for now and thank him for telling you a bit about himself.";
+
+to say J'RethTalk2: [Before the Outbreak]
+	say "     Curious as to what J'Reth did before the nanite apocalypse, you ask him to tell you. 'Hmmm, yes I suppose life then was quite different to what it is now,' the draco-mantis muses. 'As you can see around you, I'm rather into video games, Kastles & Kobolds, and those sorts of geeky things, so I was going to study game design at the college here. I'd heard that the course at Tenvale was particularly good and that having a degree in it was respected by the majority of game companies so I would have better employment prospects. Unfortunately, I left the paperwork for applying perhaps a little later than I should have, and the outbreak of creatures and transformations happened before I finished it. I wouldn't be able to get it now. I was living with my parents outside the city, so beyond the military containment zone. At least they are probably alright, but they are likely concerned about me.'";
+	say "     'I know that there is a stigma attached to living with your parents as you get older, but it saved costs, they genuinely cared about me, and it was convenient for being able to come into the city but avoid some of the other aspects of city life such as crowding and dark alleys from which muggers might get you. I had enough problems with bullies extorting me for money at school. I didn't want to have to deal with that any more as an adult. Though with the blades that I now have on my arms, I don't think that would be a problem anymore, not that I would be able to bring myself to hurt somebody with them. I mainly like them because they look cool. But returning to discussing my living arrangements, as long as I helped around the house by mowing the lawn, occasionally assisting Dad at weekends, and generally earning my place, I wasn't expected to pay rent. My parents weren't too demanding, primarily focused on making sure that I understood responsibility rather than expecting money from me which they knew I would want for college.'";
+	WaitLineBreak;
+	say "     'Which brings me to the reason I was in the city when everything went wrong. As I'm sure you are aware, college is expensive, and I needed to have money to pay for the various fees. I'd managed to get work at an automotive factory so that I could start to save up and reduce the eventual student debt that I knew I would end up with. Five days a week from nine in the morning until five in the afternoon I would take a bus from near home into the city and slave away in the factory. I suppose that it could have been worse, but when it was more of a means for me to study game design, it did feel demoralizing at times. I'm unlikely to even get into college now so all that hard work was for nothing more than the harsh life lesson of [']life isn't fair[']. Maybe I'm being pessimistic, the infected may yet be allowed to reintegrate into society and I'll be able to follow my dreams.'";
+	say "     'Anyway, I was on my way to work when the driver shouted about something in the road and crashed the bus into some parked cars. I was more shocked than hurt but some of the other passengers were injured, and it didn't take long for them to start transforming. It was rather terrifying, as I'm sure you can imagine, and as I escaped from the bus, I must have cut myself on some metal or something because I started turning green. I admit that I panicked and ran, roars and growls echoing from the streets around us. For the first few days, I hid a lot of the time, but eventually I found myself outside the mall and was invited to take shelter here as long as I behaved myself. I don't seem to have become as feral as many around the city so this has been an agreeable arrangement. That's the brief explanation of me before and at the outbreak, any more questions?' Despite this offer, you get the impression that talking about this has been harder on him than he is likely to admit, and you shake your head, thanking him for sharing his story with you.";
+
+to say J'RethTalk3: [Small Talk]
+	say "     [One of]'I considered being an adventurer like you, but I didn't want to take an arrow to the knee. Or, for that matter, to have some mindless beast bend me over a park bench and have their way with me[or]'I'm sorry, but your princess is in another castle. Or prince, whichever you prefer. I don't judge, especially with the current state of the city. Sexual discrimination seems diminished from what it used to be[or]'I'm surprised at how little caution people seem to have for food since the outbreak of whatever this is. Food that has been lying around for weeks could be infectious or at least spoiled and poisonous. I've even heard of infections that turn people into food-based creatures. You can never trust the cake-people. They always lie[or]'This city is inhabited by creatures of many different types. For some people, these creatures are pets. Others fight them. Myself... I try to stay where it is safe. Now tell me, are you a boy or a girl? I already know the answer, but I didn't want to miss a chance at making another game reference[at random].' He seems enthusiastic about what he is talking about, even if you don't understand some of what he is talking about. You both relax into idle discussions about the weather, shops that you used to like, and some of the creatures that you think are impressive. After a few minutes, your conversation comes to a comfortable end, and you decide what to do next while J'Reth futilely attempts to brush some magazines into a tidier pile.";
+
+Section 4 - Sex
+
+Instead of fucking J'reth:
+		say "     J'Reth looks at you, an amused expression on his face. 'Sex? I don't know, that sounds a little kinky. Maybe another time.'";
+
+Section 5 - Events
 
 Table of GameEventIDs (continued)
 Object	Name
@@ -238,5 +337,26 @@ to AReciprocalThanksEvent:
 		say "     J'Reth leans against you and sighs, 'Thank you. If I can get through this, then so can they. There are good people out there as well as the ravening hordes,' he jokes, waving what looks like an orc figurine in his hand. You snort before agreeing. His collection really suits him. Wanting to return the subject to his hobby, the draco-mantis begins to show you some of the posters that he doesn't have up on the wall, instead having them rolled up in tubes. You enjoy this for about half an hour before J'Reth reluctantly comes to a stop. 'I have some errands that I have been asked to do, so I'm sorry that I'm going to have to go. I've really enjoyed being able to show off to you though, so feel free to come and see me again. Who knows, I may be able to convince you to play one of the games with me.' You decide that you should probably be leaving too, exiting the toy shop together before parting to go about the rest of your day.";
 		now resolution of A Reciprocal Thanks is 2; [Did not receive oral pleasurings]
 	now A Reciprocal Thanks is resolved;
+
+Table of GameEventIDs (continued)
+Object	Name
+Invitation to Storeroom	"Invitation to Storeroom"
+
+Invitation to Storeroom is a situation.
+The level of Invitation to Storeroom is 0.
+The sarea of Invitation to Storeroom is "Nowhere".
+
+after going to Mall Foodcourt while (A Reciprocal Thanks is resolved and Invitation to Storeroom is not resolved and hp of J'Reth is 1 and a random chance of 1 in 3 succeeds):
+	InvitationtoStoreroomEvent;
+
+Instead of resolving Invitation to Storeroom:
+	InvitationtoStoreroomEvent;
+
+to InvitationtoStoreroomEvent:
+	say "     As you pass through the food court, you see someone come rushing over to you, recognizing them as J'Reth after just a moment. 'I couldn't remember whether I had told you to come and visit me anytime that you wanted,' the draco-mantis breathlessly calls as he nears you. 'I may not always be there, but even if I'm not you can have a look at my collection while you wait for me as long as you are careful. Do you remember where I live? In the back of the toy store, just here.' he says, pointing to a conveniently placed map of the mall on a column beside the two of you. 'Sorry if I'm repeating myself, but I thought it better to tell you again just to make sure I wasn't sitting around waiting for someone who didn't know where to find me.' You have to agree with the logic and you find it cute just how much he seems to enjoys your company. 'Got to go again, I have a meeting with the representative of our area of the mall and I think I'm already going to be a couple of minutes late.' With that, he runs off again, leaving you to try and remember the directions to the toy store.";
+	change the Northwest exit of Mall West Wing to J'Reth's Room; [connecting the location to the travel room]
+	change the Southeast exit of J'Reth's Room to Mall West Wing; [connecting the location to the travel room]
+	move J'Reth to J'reth's Room;
+	now Invitation to Storeroom is resolved;
 
 J'Reth ends here.

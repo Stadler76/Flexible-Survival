@@ -167,11 +167,9 @@ carry out supersponsor:
 				say "     You've already received this reward.";
 		else if calcnumber is 11:
 			if "Sanity Saver" is not listed in feats of Player:
-				say "     You shield your sanity from all harm.";
-				add "Sanity Saver" to feats of Player;
+				FeatGain "Sanity Saver";
 			else:
-				say "     You release the iron clad defense of your mind.";
-				remove "Sanity Saver" from feats of Player;
+				FeatLoss "Sanity Saver";
 		else if calcnumber is 12:
 			repeat with petget running through pets:
 				now petget is tamed;
@@ -212,7 +210,7 @@ to sslvl12:
 		decrease XP of Player by val * ( level of Player ) * ( level of Player + 1 );
 		[ say "XP decreased to [XP of Player].";]
 		now val is 12 - level of Player;
-		[ say "Levelling up [value] times.";]
+		[ say "Leveling up [value] times.";]
 		repeat with x running from 1 to val:
 			level up;
 		increase vetcheater by 1;
