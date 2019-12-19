@@ -491,7 +491,7 @@ to HellRealmBadEnd1: [player is fucked by a single demon and wakes up later hook
 	WaitLineBreak;
 	say "     There's no way for you to calculate how much time has passed since you were taken by the demon brute, but you don't really care anymore. When you wake up, you barely have any will to open your eyes given the pleasure you're receiving. You're stuck on some kind of machine that's milking your oversized parts ceaselessly, and there's tubes injecting a strange white liquid inside you that makes you feel completely mindless. There's no way out of this, you're condemned to be forever milked in Hell for the pleasure of the demons... But at least, they make you enjoy it.";
 	now battleground is "Void";
-	now bodyname of player is "Hell Prisoner";
+	trigger ending "Hell Prisoner";
 	end the story saying "You're stuck in Hell - there's no coming back from that!";
 
 to HellRealmBadEnd2: [player is gangbanged by the remaining 3 demons and wakes up later hooked up in a milking machine for eternity as a demon slave]
@@ -500,7 +500,7 @@ to HellRealmBadEnd2: [player is gangbanged by the remaining 3 demons and wakes u
 	WaitLineBreak;
 	say "     There's no way for you to calculate how much time has passed since you were taken by the demon brutes, but you don't really care anymore. When you wake up, you barely have any will to open your eyes given the pleasure you're receiving. You're stuck on some kind of machine that's milking your oversized parts ceaselessly, and there's tubes injecting a strange white liquid inside you that makes you feel completely mindless. There's no way out of this, you're condemned to be forever milked in Hell for the pleasure of the demons... But at least, they make you enjoy it.";
 	now battleground is "Void";
-	now bodyname of player is "Hell Prisoner";
+	trigger ending "Hell Prisoner";
 	end the story saying "You're stuck in Hell - there's no coming back from that!";
 
 to HellRealmBadEnd3: [player hooks themselves up on the tentacle machine, losing themselves forever to the sinful pleasures of being milked for eternity as a demon slave]
@@ -509,7 +509,7 @@ to HellRealmBadEnd3: [player hooks themselves up on the tentacle machine, losing
 	WaitLineBreak;
 	say "     Time becomes irrelevant, and you're changed beyond recognition. Your body adapted to the constant milking made by the tentacles, with oversized tits, balls and cock constantly guzzling as much milk and cum as possible. You're not even stationed in the same place as before, though you could barely notice given your current state. Nothing else matters but how good it feels to keep orgasming endlessly, without any care for the world outside, and the white mixture keeps you well drugged and addicted to it. There's no way out of this, you're condemned to be forever milked in Hell for the pleasure of the demons... But at least, you found a way to enjoy it.";
 	now battleground is "Void";
-	now bodyname of player is "Hell Prisoner";
+	trigger ending "Hell Prisoner";
 	end the story saying "You're stuck in Hell - and you deserved it.";
 
 to HellRealmBadEnd4: [player is fucked by the incubus and the succubus, then turned into their personal pet slave]
@@ -521,7 +521,7 @@ to HellRealmBadEnd4: [player is fucked by the incubus and the succubus, then tur
 	WaitLineBreak;
 	say "     You don't even notice time passing by you with your new days serving the Masters. As their lair prospers, you spend your feeble existence pleasing your almighty Lord and Mistress, doing everything they say, making sure they praise you in the end with a little sexual relief. You get plenty of use when they're especially happy with your efforts, and eventually, they even let you roam freely knowing you'll always be back for your duties! The problems of the past are long gone, and at each day, the demons get closer to world domination... Soon, everyone will have the pleasure to serve them as you do, knowing they'll be working for someone greater than themselves...";
 	now battleground is "Void";
-	now bodyname of player is "Hell Prisoner";
+	trigger ending "Hell Prisoner";
 	end the story saying "You're stuck in Hell - there's no coming back from that!";
 
 to HellRealmBadEnd5: [player is dragged by the tentacle traps and eaten alive]
@@ -531,7 +531,8 @@ to HellRealmBadEnd5: [player is dragged by the tentacle traps and eaten alive]
 	say "     Though this luxurious treatment doesn't come without a consequence. As you're stripped off your freedom of action and thoughts, reduced to a plaything for a demonic tentacle beast, there's no way to escape your inevitable fate. While you're being pulled deeper into the darkness of Hell, your begin losing your senses. Its members are much wider here, enough for you to fit in. It doesn't take too long as you feel something viscous and slimy sliding by your head over to your neck, as you're feeling yourself being pulled deeper into one enormous pulsing fleshy tunnel. You struggle to realize what's happening to you as your entire body is taken by the beast, having slurped you down to your torso, then to your legs, until only your feet remained outside.";
 	say "     Making one hungry last throb, the giant tentacle sucks you in to the last inch, sending you into its bowels, where you're left sinking in the inner juices of the demonic creature. You fall into an eternal slumber as you feel yourself melting away, and the most disturbing part is that it's the best thing you ever felt in your now ending life.";
 	now battleground is "Void";
-	now bodyname of player is "dead";
+	the Player was ended by "Hell's meal";
+	trigger ending "Player has died";
 	end the story saying "Your body and soul have been devoured by an hellish beast.";
 
 [***********************************************************]
@@ -575,7 +576,7 @@ instead of navigating Grey Abbey Library while (Strange Sorcerer is active and S
 				say "     You decide to mention those contraptions you found when passing by that sort of prison. 'Ah, the Grid. That's where they keep the mortals they capture. There are numerous realms like this one. Think of it like private companies within the group of megacorporations that Hell is. The demons['] society isn't that different from ours. Anyway, the Grid's purpose is to literally milk the bodies of the captured mortals for their sex and life juices. Why, you ask? Because those liquids carry faint levels of vital energy and is the only thing that can be reproduced. So they effectively turn the mortals into [']gold mines[']. Blood also carries said vital energy, although that'd kill the body, so it's undesirable. Of course, since the quantities are minimal, they must be enhanced and harvested daily.' he says, with an almost disturbing analytical tone.";
 				if Resolution of Hell Realm is 4:
 					say "     Adding to this, you explain the question by telling him you destroyed that area by permanently damaging the machines. Xaedihr throws a laughter. 'Oh! You did? That's amazing! The demons are going to be set back for a very long time thanks to that! Nothing they didn't deserve, anyway.'";
-					say "     [bold type]Xaedihr greatly approved of your actions.[roman type]";
+					say "     [bold type]Xaedihr greatly approved of your actions.[roman type][line break]";
 					increase Loyalty of Xaedihr by 5;
 				Linebreak;
 				say "     ([link]Y[as]y[end link]) - What about the pods you saw in that strange hall? Ask about them.";
@@ -859,7 +860,7 @@ to say XaedihrTalkHimself: [Himself]
 				say "     It seems it's a good time to leave him thinking about it, but before you can drop the subject, he resumes talking. 'Thanks for the conversation. It was the first time I told someone else about this. At the beginning, I thought what you said was ridiculous, but now... It could actually be a functional plan, wouldn't it? My will is strong, I could resist the corruption. I have an objective... I'll need to formulate a plan. Thanks again!' he ends as he grabs his book and starts looking for something. It seems you did manage to cheer him up, but you wonder if this was the right thing to say. Even so, you managed to get through his hard shell! Now only time will tell how he's going to process everything you said...";
 				now Energy of Xaedihr is 30; [embracing his demonic nature]
 			now loyalty of Xaedihr is 35;
-			say "     [bold type]Xaedihr felt much better after this conversation, and is very thankful.[roman type]";
+			say "     [bold type]Xaedihr felt much better after this conversation, and is very thankful.[roman type][line break]";
 		else if Energy of Xaedihr > 0:
 			say "     Facing him, you ask if there is any chance Xaedihr will tell a little more about himself. Between what he already told you about him being an half-demon, son of an High Incubus and the villain of his story, which is an evolved form of the normal Incubus, and everything else that happened in his doomed world where demons have taken over, he actually takes the time to have a deep talk with you, venting about his issues and questions he finds in his mind. Though it has been a long process, you managed to crack his hard shell, and he seems to be able to talk to you fairly easily. In the end, he thanks you for the conversation and returns to his studies."; [looping deep conversation]
 
@@ -1348,7 +1349,7 @@ instead of navigating Grey Abbey Library while (Xaedihr is in Grey Abbey Library
 	say "     But your curiosity persists, so you decide to sneak around the library in hopes to find him doing something, hopefully not anything dangerous that causes irreversible damage. You do a thorough search around the ground level and the upper floor, but he's nowhere to be found in the main edifice! That only leaves the bunker left, but why would he go there? Questioning yourself will make you no good if you're going to stay still wondering, so you go look for the half-demon in there. Quietly so you don't startle the sorcerer, you go over every corner... until you eventually find him in one of the rooms. The one with the master bed, no less! Why in the world would he be there? You're about to know.";
 	WaitLineBreak;
 	say "     As soon as you enter, Xaedihr immediately notices your presence. 'Oh, hello there. Hope you don't mind me utilizing your space for some personal experimentation? It would benefit us both, I assure you.' he says, with absolute no shame nor hesitation, while there's a fully naked incubus tied up in the bed, enveloped by those strange purple tendrils your mage friend loves bragging about. They're currently wiggling around the demon's body, covering every sensitive spot of his, with one shoved right down his mouth, another in his ass, and a last one sounding the nine inch penis that is typical of his species. The poor thing can't even move an inch, as the tendrils are tightly holding his arms and legs against the mattress, together with the rope attaching his hands to the bed's bars. You do remember Xaedihr telling you these extensions of himself were wired to the pleasure areas of his brain, yet he remains completely unbothered by the tentacle work happening there.";
-	say "     There he stands, completely focused on whatever he's writing on that notepad of his and barely paying you any attention. Of course, you eventually ask what this is all about. He takes several seconds to shift his gaze towards you. 'I'm analyzing brain activity on a typically lusty demon when they receive sexual estimulation. This would allow me to understand what motivates their promiscuous behavior. An interesting subject. [bold type]Do you want to observe with me?[roman type]";
+	say "     There he stands, completely focused on whatever he's writing on that notepad of his and barely paying you any attention. Of course, you eventually ask what this is all about. He takes several seconds to shift his gaze towards you. 'I'm analyzing brain activity on a typically lusty demon when they receive sexual estimulation. This would allow me to understand what motivates their promiscuous behavior. An interesting subject. [bold type]Do you want to observe with me?[roman type][line break]";
 	Linebreak;
 	say "     ([link]Y[as]y[end link]) - Sure, you want to know the end to this.";
 	say "     ([link]N[as]n[end link]) - Leave him to his strange affairs.";
@@ -1553,6 +1554,25 @@ when play begins:
 	[ Resolution stages                          ]
 	[   0: The ritual remains unknown            ]
 	[   1: Ritual is now known in Ancient Tome   ]
+
+
+[***********************************************************]
+[***********************************************************]
+[***********************************************************]
+Section 8 - Endings
+[***********************************************************]
+[***********************************************************]
+[***********************************************************]
+
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Hell Prisoner"	"BadEnd"	"Prisoner"	Hell Prisoner rule	20	false
+
+This is the Hell Prisoner rule:
+	if ending "Hell Prisoner" is triggered:
+		say "     You have delved in far too deep into the demonic realm. Hell has taken you and imprisoned your soul for all eternity. Now you serve only to satisfy the demons['] every whim of any kind, your will broken facing an inevitable fate. There's no hope... nor salvation.";
+		the Player is imprisoned;
+
 
 
 [***********************************************************]

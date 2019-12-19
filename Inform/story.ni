@@ -12,7 +12,7 @@ Use MAX_PROP_TABLE_SIZE of 51000000.
 use MAX_STATIC_DATA of 12500000.
 Use MAX_OBJ_PROP_COUNT of 1280.
 use MAX_SYMBOLS of 13000000. ["Compiler finished with code 10"]
-use MAX_NUM_STATIC_STRINGS of 270000. [ Code 10 ]
+use MAX_NUM_STATIC_STRINGS of 370000. [ Code 10 ]
 use SYMBOLS_CHUNK_SIZE of 250000. [ Code 10 ]
 use ALLOC_CHUNK_SIZE of 1450000.
 use MAX_OBJECTS of 4000.
@@ -64,7 +64,7 @@ title	description
 "Weapons"	"Some items you find make good weapons! Be sure to [bold type]use (weapon)[roman type] before a battle to have them at hand."
 "Graphics"	"Graphics can be enabled or disabled by typing [bold type]graphics[roman type]."
 "Scavenging"	"Type [bold type]scavenge[roman type] in any room you can fast travel from to hunt for food and water."
-"Socializing"	"You can [bold type]talk (person)[roman type] to chat. If they are of more personal interest with you, you can also [bold type]fuck (person)[roman type]"
+"Socializing"	"You can [bold type]talk (person)[roman type] to chat. If they are of more personal interest with you, you can also [bold type]fuck (person)[roman type][line break]"
 "Ending Early"	"Type [bold type]end now[roman type] to cause the game to end early. Alternatively you can [bold type]give in[roman type] to the infection."
 "Play On"	"You want to skip that ending? Go for it. Type [bold type]play on[roman type] and time will cease to be a concern. You will not get endings though."
 "Wait Less"	"Tired of having to click more to continue much of the text?. Type [bold type]Waits Off[roman type] to skip many delays.[line break]Don't like the change and want to go back? Type [bold type]Waits On[roman type] to return to the default."
@@ -303,6 +303,7 @@ A person has a truth state called PenileVirgin. PenileVirgin is usually true. [n
 A person has a truth state called SexuallyExperienced. SexuallyExperienced is usually false. [not saved till new infection system update]
 A person has a truth state called TwistedCapacity. TwistedCapacity is usually false. [not saved till new infection system update]
 A person has a truth state called Sterile. Sterile is usually false. [not saved till new infection system update]
+A person has a truth state called Sleeping. Sleeping is usually false. [should not be saved? unless someone wants to make sleeping beauty]
 A person has a text called Originalgender. Originalgender is usually "Undefined". [original gender of the pre-transform person]
 A person has a text called PlayerOriginalgender. PlayerOriginalGender is usually "Undefined". [first meeting gender with the player]
 A person has a text called PlayerLastGender. PlayerLastGender is usually "Undefined". [gender of the player during the last meeting]
@@ -543,6 +544,12 @@ Definition: A grab object (called x) is wielded:
 Definition: A grab object (called x) is unwieldy:		[applies to armaments only]
 	if grab object is journal, no;
 	if the absolute value of ( scalevalue of Player - objsize of x ) > 1, yes;
+	no;
+
+A person can be asleep. A person is usually not asleep.
+
+Definition: A person (called x) is asleep:
+	if Sleeping of x is true, yes;
 	no;
 
 A person can be defaultnamed. A person is usually defaultnamed.
@@ -1089,6 +1096,12 @@ Definition: A person (called x) is barechest:
 
 Definition: A person (called x) is naked:
 	if x is barecrotch and x is barechest and x is barefoot:
+		yes;
+	else:
+		no;
+
+Definition: A person (called x) is gimpy:
+	if gimp mask is equipped:
 		yes;
 	else:
 		no;
@@ -2095,7 +2108,7 @@ when play begins:
 	add { "Anthro Shaft Beast", "Dragon", "Anthro Dragoness", "Drone Wasp", "Ebonflame drake", "Ebonflame Dragator", "Ebonflame Whelp", "Dolphin Herm", "Feral Sea Dragon", "Feral Sea Dragoness", "Feral Shaft Beast", "Killer Whale", "Lizard Girl", "Naga", "Shark Herm", "Red Kangaroo", "Gator Herm", "Skunk", "Spidergirl", "Wyvern", "Yamato Dragon", "Yamato Dragoness" } to infections of TailweaponList;
 
 when play begins:
-	add { "Cheetah Woman", "Cougar", "Feline", "Felinoid", "Feral Cheetah", "Jaguar Male", "Leopardman", "Manticore", "Margay", "Ninja Cat", "Panther Herm", "Panther Taur", "Plush lion", "Rubber Puma", "Rubber tigress", "Sabretooth", "Siamese Cat", "Snow Bat", "Snow Leopard", "Sphinx", "Tiger", "Tigertaur", "Malayan Tiger Herm", "Wildcat" } to infections of FelineList;
+	add { "Cheetah Woman", "Cougar", "Feline", "Felinoid", "Feral Cheetah", "Jaguar Male", "Leopardman", "Manticore", "Margay", "Ninja Cat", "Panther Herm", "Panther Taur", "Plush lion", "Rubber Puma", "Rubber Tigress", "Sabretooth", "Siamese Cat", "Snow Bat", "Snow Leopard", "Sphinx", "Tiger", "Tigertaur", "Malayan Tiger Herm", "Wildcat" } to infections of FelineList;
 
 when play begins:
 	add { "Husky Alpha", "Alpha Wolf", "Ember Breeder", "Cerberus", "Chocolate Lab", "Coyote", "Dalmatian", "Doberman Bitch", "Doberman Male", "Husky Bitch", "Feral Wolf", "German Shepherd Male", "German Shepherd Bitch", "Jackalboy", "Jackalman", "Latex Wolf", "Painted Wolf Herm", "Pit bull", "Retriever Female", "Smooth Collie Shemale", "Werewolf Costume", "Wolftaur", "Wrestling Wolf" } to infections of CanineList;
@@ -2125,7 +2138,7 @@ when play begins:
 	add { "Beaver", "Hyper Squirrel", "Slut Rat" } to infections of RodentList;
 
 when play begins:
-	add { "Bottlenose Toy", "Latex Vixen Herm", "Latex Fox", "Latex Mistress", "Latex Wolf", "Rubber Puma", "Rubber tigress" } to infections of LatexList;
+	add { "Bottlenose Toy", "Latex Vixen Herm", "Latex Fox", "Latex Mistress", "Latex Wolf", "Rubber Puma", "Rubber Tigress" } to infections of LatexList;
 
 when play begins:
 	add { "Liquidshifter" } to infections of SlimeList;
@@ -2153,7 +2166,7 @@ when play begins:
 	add { "Feral Sea Dragon", "Feral Sea Dragoness", "Dolphin Herm", "Hydra Beast", "Naga", "Shark Herm", "Sierrasaur", "Snake", "Yamato Dragon", "Yamato Dragoness", "Wyvern", "Spidertaur Male" } to infections of InternalCockList;
 
 when play begins:
-	add { "Anthro Shaft Beast", "Ember Breeder", "Catgirl", "Cheetah Woman", "Corota", "Cougar", "Ebonflame Dragator", "Ebonflame drake", "Ebonflame Whelp", "Feline Gymnast", "Felinoid", "Feral Cheetah", "Feral Gryphon", "Feral Shaft Beast", "Fire Elemental", "Jaguar Warrior", "Leopardman", "Manticore", "Margay", "Ninja Cat", "Panther Herm", "Panther Taur", "Plush lion", "Rubber tigress", "Sabretooth", "Shadow Beast Male", "Sphinx", "Snow Bat", "Tiger", "Malayan Tiger Male", "Tigertaur", "Malayan Tiger Herm", "Wildcat", "Rubber Puma" } to infections of BarbedCockList;
+	add { "Anthro Shaft Beast", "Ember Breeder", "Catgirl", "Cheetah Woman", "Corota", "Cougar", "Ebonflame Dragator", "Ebonflame drake", "Ebonflame Whelp", "Feline Gymnast", "Felinoid", "Feral Cheetah", "Feral Gryphon", "Feral Shaft Beast", "Fire Elemental", "Jaguar Warrior", "Leopardman", "Manticore", "Margay", "Ninja Cat", "Panther Herm", "Panther Taur", "Plush lion", "Rubber Tigress", "Sabretooth", "Shadow Beast Male", "Sphinx", "Snow Bat", "Tiger", "Malayan Tiger Male", "Tigertaur", "Malayan Tiger Herm", "Wildcat", "Rubber Puma" } to infections of BarbedCockList;
 
 when play begins:
 	add { "Dragontaur", "Dracovixentaur", "Ebonflame Dragator", "Ebonflame drake", "Ebonflame Whelp", "Feral Sea Dragoness", "Feral Sea Dragon", "Fire Sprite", "Fire Elemental", "Flaming Lynx", "Yamato Dragoness", "Yamato Dragon", "Wyvern" } to infections of FirebreathList;
@@ -2716,10 +2729,11 @@ to guesstimate time at (x - a number):
 
 To Extend game by (x - a number):
 	decrease targetturns by x;
-	say "[bold type]((You have earned additional time: [x divided by 8] days, [(remainder after dividing x by 8) times 3] hours))[roman type]";
+	say "[bold type]((You have earned additional time: [x divided by 8] days, [(remainder after dividing x by 8) times 3] hours))[roman type][line break]";
 
 
 To process (x - a grab object):
+	let tan be hunger of player;
 	if x is temporary and x is owned:
 		say "You eagerly use the [x]!";
 		let found be 0;
@@ -2944,7 +2958,7 @@ To process (x - a grab object):
 					say "     [bold type]The [x] [if plural of x is true]are simply too big! They are meant for much larger beings than yourself[else]is simply too big! It is meant for much larger beings than yourself[end if].[roman type][line break]";
 					continue the action;
 			else:
-				say "     [bold type]You start wearing the [x].[roman type]";
+				say "     [bold type]You start wearing the [x].[roman type][line break]";
 				now x is equipped;
 	else if x is a medkit:
 		let healed be 10 + level of Player + ( ( intelligence of Player minus 10 ) divided by 2 );
@@ -2999,6 +3013,10 @@ To process (x - a grab object):
 			now HP of Player is maxHP of Player;
 		say "Using your healing booster, you inject the mix into your body, giving a quick boost to your infected body's healing rate. You regain [special-style-1][healed][roman type] HP.";
 		delete healing booster;
+	if tan > hunger of player and "Tanuki Salts" is listed in feats of player:
+		say "Dashing a little tanuki salts helped things along. Mmm, divinely tasty.";
+		playerEat 5;
+		increase the morale of the player by 5;
 
 
 understand "talk [person]" as conversing.
@@ -4007,7 +4025,7 @@ to OldInfectionRoll: [old infections with less body parts made before 07.05.2019
 			now Cock Description of Player is ""; [wiping out the new style parts]
 			now Cunt Description of Player is ""; [wiping out the new style parts]
 			if Name entry is listed in infections of InternalCockList and internalbypass is true:
-				say "[italic type]...After some time, it appears that your balls re-emerge, in spite of this strain's normally internal anatomy.[roman type]";
+				say "[italic type]...After some time, it appears that your balls re-emerge, in spite of this strain's normally internal anatomy.[roman type][line break]";
 
 to NewInfectionRoll:
 	choose row MonsterID from the Table of Random Critters;
@@ -4305,7 +4323,7 @@ to NewInfectionRoll:
 			choose row MonsterID from the Table of Random Critters;
 			now Cock of Player is Cock Adjective entry;
 			if Name entry is listed in infections of InternalCockList and internalbypass is true:
-				say "[italic type]...After some time, it appears that your balls re-emerge, in spite of this strain's normally internal anatomy.[roman type]";
+				say "[italic type]...After some time, it appears that your balls re-emerge, in spite of this strain's normally internal anatomy.[roman type][line break]";
 	else if x is 9:
 		follow the sex change rule;
 		if Cuntname of Player is not Name entry:
@@ -4320,12 +4338,19 @@ to NewInfectionRoll:
 			now Cunt Color of Player is Cunt Color entry;
 			now Clit Size of Player is Clit Size entry;
 
-to attributeinfect:		[sets the player values from the new attributes]
+to attributeinfect:
+	attributeinfect silence state is 0;
+
+to attributeinfect silently:
+	attributeinfect silence state is 1;
+
+to attributeinfect silence state is ( Silence - a number ): [sets the player values from the new attributes]
 	choose row MonsterID from the Table of Random Critters;
 	if BodyName of Player is listed in infections of TaurList or BodyName of Player is listed in infections of NoLegList:
 		repeat with z running through equipped equipment:
 			if taur-compatible of z is false:
-				say "     [bold type]Sadly, the [z] [if plural of z is true]are incompatible with your new body type, so you can do nothing but take them off[else]is incompatible with your new body type, so you can do nothing but take it off[end if].[roman type][line break]";
+				if Silence is 0:
+					say "     [bold type]Sadly, the [z] [if plural of z is true]are incompatible with your new body type, so you can do nothing but take them off[else]is incompatible with your new body type, so you can do nothing but take it off[end if].[roman type][line break]";
 				now z is not equipped;
 	if there is a scale in row MonsterID of the Table of Random Critters:
 		if scalevalue of Player is not scale entry:
@@ -4333,15 +4358,19 @@ to attributeinfect:		[sets the player values from the new attributes]
 			repeat with z running through equipped equipment:
 				if size of z > 0: [size restricted equipment]
 					if (scalevalue of Player - size of z > 1):
-						say "     [bold type]You quickly rip your [z] off your body before [if plural of z is true]they are destroyed when you grow larger than they could support[else]it is destroyed when you grow larger than it could support[end if].[roman type][line break]";
+						if Silence is 0:
+							say "     [bold type]You quickly rip your [z] off your body before [if plural of z is true]they are destroyed when you grow larger than they could support[else]it is destroyed when you grow larger than it could support[end if].[roman type][line break]";
 						now z is not equipped;
 					else if (scalevalue of Player - size of z is 1):
-						say "     [bold type]Your [z] stretches a bit as it is forced to conform to a larger body.[roman type][line break]";
+						if Silence is 0:
+							say "     [bold type]Your [z] stretches a bit as it is forced to conform to a larger body.[roman type][line break]";
 					else if (scalevalue of Player - size of z < -1):
-						say "     [bold type]As you shrink, [z] becomes far too big to fit you. You have little choice but to take [if plural of z is true]them[else]it[end if] off.[roman type][line break]";
+						if Silence is 0:
+							say "     [bold type]As you shrink, [z] becomes far too big to fit you. You have little choice but to take [if plural of z is true]them[else]it[end if] off.[roman type][line break]";
 						now z is not equipped;
 					else if (scalevalue of Player - size of z is -1):
-						say "     [bold type]Your [z] hangs fairly on your now smaller frame.[roman type][line break]";
+						if Silence is 0:
+							say "     [bold type]Your [z] hangs fairly on your now smaller frame.[roman type][line break]";
 	else:
 		now scalevalue of Player is 3;
 	if there is a body descriptor in row MonsterID of the Table of Random Critters:
@@ -4784,15 +4813,17 @@ postimport rules is a rulebook.
 Everyturn rules is a rulebook.
 
 This is the turnpass rule:
+	now fightstatus is 0;
+	now looknow is 0;
+	now ishunting is false;
+	now showlocale is true;
+	if the story has ended:
+		rule succeeds;
 	follow the cock descr rule;
 	if "Sanity Saver" is listed in the feats of Player:
 		now humanity of Player is 100;
 	follow the cunt descr rule;
 	follow the breast descr rule;
-	now fightstatus is 0;
-	now looknow is 0;
-	now ishunting is false;
-	now showlocale is true;
 	if HP of Velos > 2:
 		if Velos is not in the location of the player:		[traveling w/player]
 			now Velos is in the location of the player;
@@ -5068,9 +5099,9 @@ This is the player injury rule:
 	else if per <= 40:
 		now descr is "[if Playerpoison > 0][special-style-1]poisoned[roman type] and [end if][one of]wounded[or]bashed around[or]significantly harmed[at random]";
 	else if per <= 80:
-		now descr is "[one of]scuffed[or]bruised[or]still in the fight[at random][if Playerpoison > 0], but [special-style-1]poisoned[roman type]";
+		now descr is "[one of]scuffed[or]bruised[or]still in the fight[at random][if Playerpoison > 0], but [special-style-1]poisoned[roman type][line break]";
 	else:
-		now descr is "[one of]healthy[or]energetic[or]largely unharmed[at random][if Playerpoison > 0], but [special-style-1]poisoned[roman type]";
+		now descr is "[one of]healthy[or]energetic[or]largely unharmed[at random][if Playerpoison > 0], but [special-style-1]poisoned[roman type][line break]";
 	rule succeeds;
 
 This is the brain descr rule:
@@ -5270,7 +5301,7 @@ This is the self examine rule:
 		-- 4:
 			say "are superhumanly tall.";
 		-- 5:
-			say "enormous in size, a lot larger than any regular human ever could be.";
+			say "are enormous in size, a lot larger than any regular human ever could be.";
 	[ Infection Descriptions Below   ]
 	if Player is FullyNewTypeInfected and NewTypeInfectionActive is true: [new infection on player and activated]
 		say "Pulling out a small mirror, you check yourself over from head to toe, attempting to make sense of your current form. Your head and face resemble that of [Head Description of Player]. You have [Eye Adjective of Player], [Eye Color of Player] eyes and an overall [Gender Adjective of Player] appearance. [if Player is HasBeard]You have a [Hair Color of Player] [Beard Style of Player]. [end if][if Player is HasHeadHair]On top of your head you have [Hair Length of Player] inch long, [Hair Shape of Player] [Hair Color of Player] hair in the [Hair Style of Player] style. [end if]Inspecting your [Mouth Length Adjective of Player] mouth with both the mirror and your digits, you attempt to look past your [Tongue Length of Player] inch long, [Tongue Color of Player], [Tongue Adjective of Player] tongue and into your [Mouth Length Adjective of Player] throat. [if Player is HasHeadAdornments]Before moving on from your head, you give your [Head Adornments of Player] a proud glance followed by a light caress. [end if][line break]";
@@ -5521,9 +5552,9 @@ This is the self examine rule:
 					say "child '[Name entry]'";
 				say " is a pureblood [Head entry]. ";
 			if Albino entry is true:
-				say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type]";
+				say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type][line break]";
 			else if Melanism entry is true:
-				say "[bold type]Their pigmentation is almost pure black. [roman type]";
+				say "[bold type]Their pigmentation is almost pure black. [roman type][line break]";
 			say "You have a [PlayerRelationship entry] relationship with them, and your child's personality is rather [Personality entry].";
 		else:
 			repeat with x running from 1 to number of filled rows in Table of PlayerChildren:
@@ -5548,9 +5579,9 @@ This is the self examine rule:
 						say "child '[Name entry]'";
 					say " is a pureblood [Head entry]. ";
 				if Albino entry is true:
-					say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type]";
+					say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type][line break]";
 				else if Melanism entry is true:
-					say "[bold type]Their pigmentation is almost pure black. [roman type]";
+					say "[bold type]Their pigmentation is almost pure black. [roman type][line break]";
 				say "You have a [PlayerRelationship entry] relationship with them, and your child's personality is rather [Personality entry].";
 	if (number of filled rows in Table of PlayerChildren + number of entries in childrenfaces) > 1: [more than one child of both types combined]
 		say "They all are as alert and human as you are, taking after you eagerly. Despite their age, they are already grown to young adults, both physically and in apparent emotional and mental development.";
@@ -5605,9 +5636,9 @@ to say OffspringDesc:
 					say "child '[Name entry]'";
 				say " is a pureblood [Head entry]. ";
 			if Albino entry is true:
-				say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type]";
+				say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type][line break]";
 			else if Melanism entry is true:
-				say "[bold type]Their pigmentation is almost pure black. [roman type]";
+				say "[bold type]Their pigmentation is almost pure black. [roman type][line break]";
 			say "You have a [PlayerRelationship entry] relationship with them, and your child's personality is rather [Personality entry].";
 		else:
 			repeat with x running from 1 to number of filled rows in Table of PlayerBunkerChildren:
@@ -5632,9 +5663,9 @@ to say OffspringDesc:
 						say "child '[Name entry]'";
 					say " is a pureblood [Head entry]. ";
 				if Albino entry is true:
-					say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type]";
+					say "[bold type]Their pigmentation is muted and almost white, except for the eyes that appear red. [roman type][line break]";
 				else if Melanism entry is true:
-					say "[bold type]Their pigmentation is almost pure black. [roman type]";
+					say "[bold type]Their pigmentation is almost pure black. [roman type][line break]";
 				say "You have a [PlayerRelationship entry] relationship with them, and your child's personality is rather [Personality entry].";
 	if (number of filled rows in Table of PlayerBunkerChildren) > 1:
 		say "They all are as alert and human as you are, taking after you eagerly. Despite their age, they are already grown to young adults, both physically and in apparent emotional and mental development.";
@@ -6614,6 +6645,7 @@ Include Gryphons Plot by Shay.
 Include Gunbunny by Stripes.
 Include Harpy by Nuku Valente.
 Include Hawkman by Sarokcat.
+Include Hellfire Demon by Gherod.
 Include Helot by Wahn.
 Include Hentai Fan by Stripes.
 Include Herm Dolphin by Hellerhound.
@@ -6933,6 +6965,7 @@ Include Meredith by Stripes.
 Include Micaela by Stripes.
 Include Midnight by Sarokcat.
 Include Milo by CrimsonAsh.
+Include Mogdraz by Gherod.
 Include Monty by Wahn.
 Include Mouse Taur by Nuku Valente.
 Include Pet Mutt by CrimsonAsh.
@@ -7023,13 +7056,6 @@ Include Honey by Luneth.
 Include Korvin by Stripes.
 Include Rachel Mouse by Stripes.
 Include Ryousei by Wahn.
-
-When play ends:
-	say "----------[line break]";
-	say "I hope you enjoyed playing that as much as we enjoyed coding/writing it! It doesn't have to end here though! Come join other mutants and play in the Multiplayer Flexible Survival universe with us!";
-	say "https://flexiblesurvival.com/[line break]";
-	say "Once you have a character, click [']direct control['], and we'll be there, waiting to give a hand!";
-	say "Already have a MUD/MUCK/MUSH client? We're at flexiblesurvival.com port 2222";
 
 
 Book - Start the Game
@@ -7232,8 +7258,7 @@ To startFeatget: [alternate featget used for start] [Checkpoint-]
 			if calcnumber > 0 and calcnumber <= the number of filled rows in table of gainable feats:
 				now current menu selection is calcnumber;
 				choose row current menu selection from the table of gainable feats;
-				say "[title entry]: [description entry][line break]";
-				say "Is this what you want?";
+				say "[title entry]: [description entry]?";
 				if Player consents:
 					now freefeatgeneral is the title in row calcnumber of table of gainable feats; [important change from regular featget]
 					now featqualified is 0;
@@ -7264,8 +7289,7 @@ To startFunFeatget: [alternate funfeatget used for start]
 			if calcnumber > 0 and calcnumber <= the number of filled rows in table of gainable feats:
 				now current menu selection is calcnumber;
 				choose row current menu selection from the table of gainable feats;
-				say "[title entry]: [description entry][line break]";
-				say "Is this what you want?";
+				say "[title entry]: [description entry]?";
 				if Player consents:
 					now freefeatfun is the title in row calcnumber of table of gainable feats; [important change from regular featget]
 					now featqualified is 0;
@@ -8601,7 +8625,7 @@ to eyecolorsetting: [ Green, Blue, Gray, Brown, Hazel, Amber, Red]
 		now menuexit is 1;
 
 to playernaming:
-	say "[bold type]Please enter new name: [roman type]";
+	say "[bold type]Please enter new name: [roman type][line break]";
 	get typed command as playerinput;
 	now name of Player is playerinput;
 
@@ -8634,9 +8658,9 @@ to say menuwardlist:
 			say "Mindcontrol ";
 		if VoreList is warded:
 			say "Vore ";
-		say "[close bracket][roman type]";
+		say "[close bracket][roman type][line break]";
 	else:
-		say "[bold type]None Warded[roman type]";
+		say "[bold type]None Warded[roman type][line break]";
 
 to say menubanlist:
 	if CockVoreList is banned or FurryList is banned or MaleList is banned or FemaleList is banned or HumorousList is banned or DemonList is banned or HermList is banned or IncestList is banned or TransList is banned or MindcontrolList is banned or NonconList is banned or VoreList is banned:
@@ -8667,9 +8691,9 @@ to say menubanlist:
 			say "Mindcontrol ";
 		if VoreList is banned:
 			say "Vore ";
-		say "[close bracket][roman type]";
+		say "[close bracket][roman type][line break]";
 	else:
-		say "[bold type]None Banned[roman type]";
+		say "[bold type]None Banned[roman type][line break]";
 
 to say gsopt_1:
 	now calcnumber is -1;

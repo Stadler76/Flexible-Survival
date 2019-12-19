@@ -6,17 +6,18 @@ Section 0 - Event
 
 Curious Pearl is a situation.
 The sarea of Curious Pearl is "Beach".
-The level of Valuable RLD Artifact is 5. [minimum level to find the event]
+The level of Curious Pearl is 5. [minimum level to find the event]
 Curious Pearl is inactive.
 
 when play begins:
+	add Curious Pearl to BadSpots of MaleList;
 	add Curious Pearl to BadSpots of FurryList;
-	add Valuable Warehouse Artifact to badspots of FeralList;
+	add Curious Pearl to BadSpots of FeralList;
 
 Instead of resolving Curious Pearl:
 	if KyrverthStage is 3:
 		say "     Remembering Kyrverth's desire for treasure, you look around whether you can find anything. Somehow you know that something is under one of those rocks; it's hidden within the sand in plain sight. What you pull out has your mouth agape - a large sphere that lacks any color. In fact, this orb even seems to absorb most of light that hits its smooth, pitch black surface. Some of the light is still reflected, leaving a brilliant shimmer. Turning it with your hands, this thing does really seem to be perfect with its spherical shape. At some point you blink rapidly as some reflected [if daytimer is day]sunlight[else]moonlight[end if] directly shines into your eyes. You feel a bit confused and spaced out, as if everything you were doing before is gone. Judging by the [if daytimer is day]sun[else]moon[end if], you do seem to have been standing around here for a while. This pearl seems to have an influence over you, and you don't know whether carrying it around is a good idea...";
-		say "     [bold type]Will you take it?[roman type]";
+		say "     [bold type]Will you take it?[roman type][line break]";
 		LineBreak;
 		say "     ([link]Y[as]y[end link]) - Take it.";
 		say "     ([link]N[as]n[end link]) - Leave it be.";
@@ -87,17 +88,22 @@ to say blackpearlusing:
 		say "     Getting ready for this act, you start relaxing and drive one of your clawed digits into your anus, fingering yourself. Unfortunately, your state of mind doesn't allow you to get much more than one of your thick fingers inside, and you just press the black pearl against your opening in your impatience. Surprisingly, you do end up relaxing as the cool yet slickened ball is pressed against your anal ring. It feels like never before were you able to relax better, and your opening gives way easily. With a 'plop', your anus even latches onto the pearl, changing when the black orb starts entering you. It seems that triangular, little shapes have grown within your anal ring which you can extend at will, similar to your claws. They seem to be perfectly made for this situation as these little 'mandibles' are perfectly able to latch onto the pearl and keep pushing it in. When it finally enters you, you roar out in a strained yet pleasurable state when you feel the orb still travel along your intestines, rubbing against your most sensitive spots, until you lose track of it, the shape having disappeared into you forever.";
 	say "     With the pearl inside of you, you have been completed and you roar out a high-pitched noise, announcing your return to this world.";
 	WaitLineBreak;
-	now BodyName of Player is "Leviathan";
+	now BodyName of Player is "Leviathan"; [TODO: Add a Table of Random Critters entry for "Leviathan" (@Stadler#3007)]
 	now FaceName of Player is "Leviathan";
 	now TailName of Player is "Leviathan";
 	now SkinName of Player is "Leviathan";
 	now CockName of Player is "Leviathan";
+	trigger ending "Leviathan Rising";
 	end the story saying "You have become the Leviathan.";
 
 Section 2 - Endings
 
-when play ends:
-	if BodyName of Player is "Leviathan":
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Leviathan Rising"	"BadEnd"	""	Leviathan Rising rule	20	false
+
+This is the Leviathan Rising rule:
+	if ending "Leviathan Rising" is triggered:
 		say "     The Great Leviathan has awakened. How could you have been blind your entire life? You were always destined for greatness and divinity. It just took this magnificent pearl to bring it out of you. ";
 		if location of play is beach:
 			say "Standing on the beach, you squint at the light reflecting in the water. Without a second thought, you slither towards the water, feeling somewhat vulnerable out here. You need to dive down back into the darkness, to grow and establish your rule over the sea again. ";
@@ -109,5 +115,6 @@ when play ends:
 		else:
 			say "constrict them in your coils. The sight of these land dwellers screaming and fighting for air in your coils does feel exhilarating. None can hope to free themselves of your grasp. Nearly all of them find themselves surprised, but also grateful, when you don't drown them in the seemingly infinite depths of the ocean but instead bring them to your sanctuary. Within the ruins, your captives start taking a shape similar to yours, as you end up showing your affections to them daily, making sure that they all mature nicely. This treatment also has your new disciples be very open to your suggestions and commands; many end up devoting themselves to you with the ones who leave you still making others into creatures of the void.";
 		say "     One day, you'll rise from the abyss again and finish what you started years ago, but this time, nobody will be able to stop you.";
+		the Player is gone;
 
 Black Pearl ends here.

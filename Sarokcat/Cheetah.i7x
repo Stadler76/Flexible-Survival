@@ -45,7 +45,7 @@ To say CheetahWomanLoses:
 				say "     The both of you are brought to orgasm almost simultaneously, you are lost in bliss and it feels as if an eternity has passed. You look to your partner and smile, satisfied that you have had your pleasure you gather your things and make on your way, leaving the cheetah woman to whatever fate awaits her";
 		else: [Milking]
 			say "     Moving to restrain her before she can get away, you force her down onto the ground with her [one of]muzzle[or]face[or]snout[at random] pressed against the earth. You [one of]pick up a glass bottle from the ground[or]pull a glass bottle from your bag[or]pick up a plastic bottle from the ground[or]pull a plastic bottle from your bag[at random] and place the container under her [one of]right breast[or]left breast[at random], then begin to stimulate her nipples. Her breathing starts to get heavy as the stimulation to her tits intensifies. Soon she is moaning and purring as milk shoots out her tits and into the container. After you are done with her, you move her slumping body to the side and put a cap on the bottle of cheetah milk, then go on your merry way.";
-			say "     [bold type]You received a bottle of cheetah milk[roman type]";
+			say "     [bold type]You received a bottle of cheetah milk[roman type][line break]";
 			increase carried of cheetah milk by 1;
 	else: [Milking]
 		say "     Moving to restrain her before she can get away, you force her down onto the ground with her [one of]muzzle[or]face[or]snout[at random] pressed against the earth. You [one of]pick up a glass bottle from the ground[or]pull a glass bottle from your bag[or]pick up a plastic bottle from the ground[or]pull a plastic bottle from your bag[at random] and place the container under her [one of]right breast[or]left breast[at random], then begin to stimulate her nipples. Her breathing starts to get heavy as the stimulation to her tits intensifies. Soon she is moaning and purring as milk shoots out her tits and into the container. After you are done with her, you move her slumping body to the side and put a cap on the bottle of cheetah milk, then go on your merry way.";
@@ -334,8 +334,13 @@ to say cheetahwomaninheat:
 
 Section 4 - Endings
 
-when play ends:
-	if BodyName of Player is "Cheetah Woman":
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Cheetah Woman Infection"	"Infection"	""	Cheetah Woman Infection rule	1000	false
+
+This is the Cheetah Woman Infection rule:
+	if Player has a body of "Cheetah Woman":
+		trigger ending "Cheetah Woman Infection"; [Here it states, that the ending has been played.]
 		if humanity of Player < 10:
 			if Player is male:
 				say "     Surrendering to your baser instincts, you find yourself running and running through the city, until you once more end up back in the zoo where you found that cheetah before. Following where your nose and your cock lead you, you soon find where the cheetah has made her den in one of the empty enclosures, and much to your surprise, she isn't alone either. You find her there slowly teasing another female cheetah as they relax during the day, the other female is obviously a new convert to the cheetah way of life much like yourself, but you find yourself unable to care about that anymore with the sight of two females in front of you. Their gazes focus on you as you proudly approach, a soft grin spreading across the muzzle of the cheetah you encountered earlier as she recognizes your fine spots and masculine scent.";

@@ -285,7 +285,7 @@ to say alexandradesc_bg:
 		say "     Speaking of her duty, she's stationed herself by the library entrance, acting as your rough and tough guard to the safe haven inside[if HP of Alexandra is 3 or HP of Alexandra is 5], not letting her current state hold her back[end if][if Fang is booked]. She shares this duty with Fang, alternating with the wolf[end if]. Having kept her nightstick, it hangs at the ready for those who would disturb the safety of your hideout.";
 	else if Alexandra is in Worker Barracks:
 		say "     Speaking of her duty, she's mostly hanging around in the back of the main barracks room, leaning against a wall as she ogles the many horseman studs living in the building. She seems happy with her current task of serving as a breeding bitch, most of the time even leaving the top button of her pants undone and all too often sliding a hand inside to play with herself a litte. Still, that doesn't mean she isn't a tough bitch either, as she still keeps her nightstick fairly close, ready to be picked up in case the Farm is attacked or something like that.";
-	if HP of Alexandra > 3:
+	if HP of Alexandra > 3 and Alexandra is in Grey Abbey Library:
 		say "     Alexandra's [Libido of Alexandra] pups are younger Dobermans, having matured quickly to be roughly in their teens[if Libido of Alexandra > 4]. They are a mix of boys and girls among the litters[end if]. They are a rough and rambunctious lot who hang out in one of the side rooms most of the time. They do go outside on occasion to find some trouble to get into. They do seem fairly self-sufficient though.";
 
 to say alexandratalk_bg:
@@ -351,11 +351,17 @@ to say BadAlexandraTalkMenu:
 		now sortorder entry is 2;
 		now description entry is "Bring up that you want to go to the pediatrics clinic with her";
 	[]
-	if HP of Alexandra is 2 or HP of Alexandra is 4 and ((demon brute is tamed and DBCaptureQuestVar is 5) or PlayerMet of Farmhand Horsemen is true): [  or ("Feral Mutt" is listed in EncounteredEnemies of Player or "Feral Mutt Pack" is listed in EncounteredEnemies of Player)):] [not pregnant right now; possible candidates available]
+	if (HP of Alexandra is 2 or HP of Alexandra is 4 or HP of Alexandra is 5) and ((demon brute is tamed and DBCaptureQuestVar is 5) or PlayerMet of Farmhand Horsemen is true): [  or ("Feral Mutt" is listed in EncounteredEnemies of Player or "Feral Mutt Pack" is listed in EncounteredEnemies of Player)):] [not pregnant right now; possible candidates available]
 		choose a blank row in table of fucking options;
 		now title entry is "Breeding her (with others)";
 		now sortorder entry is 3;
 		now description entry is "Tell Alexandra that you want to get her knocked up by partners you choose";
+	[]
+	if Alexandra is in Worker Barracks:
+		choose a blank row in table of fucking options;
+		now title entry is "Taking her back to the library";
+		now sortorder entry is 4;
+		now description entry is "Bring your bitch back to the Grey Abbey Library";
 	[]
 	choose a blank row in table of fucking options;
 	now title entry is "Her family";
@@ -401,6 +407,8 @@ to say BadAlexandraTalkMenu:
 					say "[AlexandraFertilityTrip]";
 				else if (nam is "Breeding her (with others)"):
 					say "[AlexandraBreedingMenu]"; [See file Alexandra Breeding.i7x in Wahn's folder]
+				else if (nam is "Taking her back to the library"):
+					say "[AlexandraBreeding_LibraryReturn]"; [See file Alexandra Breeding.i7x in Wahn's folder]
 				else if (nam is "Her family"):
 					say "[AlexandraBackstory1]";
 				else if (nam is "Growing up and her adult life"):
@@ -533,7 +541,6 @@ to say AlexandraFertilityTrip: [taking her to Medea for fertility treatments]
 		add "Fertility Treatments" to Traits of Alexandra;
 		now Pediatrics Lobby is known; [navpoint unlock]
 
-
 to say AlexandraBackstory1: [family]
 	say "     Alexandra takes a seat in one of the chairs, rocking on its back legs and lighting up a smoke. 'My folks were crooks. Did drugs and petty crimes to pay for the habit. It was a pretty shitty home to grow up in, so I was taken away by Child Services when they finally got caught. Not that that was much better, but I tried to convince myself I was better than them. I decided to become a cop and tried my best to be [']a moral and upright person['],' she says with obvious scorn for her previous self.";
 	say "     'I tried to tell myself that my parents being crooks didn't matter, tried to act like stuff like that doesn't breed true. But I always knew deep down I was lying and there's no use pretending otherwise,' she says with a growl, flicking away her cigarette. 'I'm a bad dog and am much better off just admitting it. I certainly am enjoying myself a whole lot more as a slutty bitch, that's for damn sure. Shit, I'm sick of talking about this crap,' the anthro doberman says with a growl and hops out of the chair, moving over to the entrance door to check for something to fight and take her aggressions out on..";
@@ -614,7 +621,7 @@ Section 2 - Bad Girl Sexxxings
 Part 1 - Bad Alexandra Sex Selection
 
 to say sexwithAlexandra_bg:
-	if "Horny Bastard" is listed in Traits of Alexandra and lastfuck of Alexandra - turns < 4:
+	if "Horny Bastard" is listed in Traits of Alexandra and lastfuck of Alexandra - turns < 3:
 		say "     'Not that I don't want to boss, but you gotta let me have a little while to rest. Just can't keep up with your libido, you nymphomaniac.'";
 	else if "Horny Bastard" is not listed in Traits of Alexandra and lastfuck of Alexandra - turns < 6:
 		say "     'As fun as this has been, I do need at least a short break before we go again[if HP of Alexandra < 50], boss[end if].'";
@@ -1528,8 +1535,13 @@ to say A_IcarusComment:
 
 Section 13 - Endings
 
-when play ends:
-	if alexandra is booked and HP of Alexandra < 50:
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Alexandra's Epilogue"	"NPC"	""	Alexandra's Epilogue rule	900	false
+
+This is the Alexandra's Epilogue rule:
+	if Alexandra is booked and HP of Alexandra < 50:
+		trigger ending "Alexandra's Epilogue"; [Here it states, that the ending has been played.]
 		if humanity of Player < 10:
 			say "     When the doberwoman realizes that you're not going to be returning, she strikes out into the city[if Libido of alexandra > 0] with her offspring[end if]. After beating up several other canines and a few lightly infected survivors she manages to track down, [if Libido of alexandra > 0]they form[else]she forms[end if] a gang of rough canine thugs. With herself as the alpha and gang leader, her pack - formed mostly newly infected Dobermans and her offspring - fight for a claim a chunk of the city as their own. They have little concern for boundaries or rules and happily take whatever they want, be it goods or sex, from any they happen to accost.";
 		else:

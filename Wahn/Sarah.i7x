@@ -3,6 +3,7 @@ Sarah by Wahn begins here.
 [ Expanded by Stripes                              ]
 [ Re-write and expansion by Wahn                   ]
 [ Expansion by Glitch                              ]
+[ Added Evil DB support - Gherod]
 
 [ SarahCured                                                                         ]
 [ 8: player told Sarah he wants to fuck, she doesn't want to be knocked up, anal OK  ]
@@ -457,6 +458,12 @@ to say SarahTalkMenu:
 		now sortorder entry is 4;
 		now description entry is "Talk about what she thinks caused the infection";
 	[]
+	if resolution of Demonic Redemption is 2 and companion of player is demon brute:
+		choose a blank row in table of fucking options;
+		now title entry is "Ask her for help regarding your Demon Brute";
+		now sortorder entry is 5;
+		now description entry is "Ask Sarah if she can do something for the Demon Brute.";
+	[]
 	sort the table of fucking options in sortorder order;
 	repeat with y running from 1 to number of filled rows in table of fucking options:
 		choose row y from the table of fucking options;
@@ -480,6 +487,8 @@ to say SarahTalkMenu:
 					say "[SarahTalk3]";
 				if (nam is "Theories on the outbreak"):
 					say "[SarahTalk4]";
+				if (nam is "Ask her for help regarding your Demon Brute"):
+					say "[SarahTalk_DB]";
 				wait for any key;
 				say "[SarahTalkMenu]";
 		else if calcnumber is 0:
@@ -1532,8 +1541,17 @@ to say SarahDavidScene3:
 	now DavidSarahInteraction is 2;
 	now lastDavidSarahInteraction is turns;
 
-when play ends:
+Section 2 - Endings
+
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Sarah's Epilogue"	"NPC"	""	Sarah's Epilogue rule	900	false
+
+This is the Sarah's Epilogue rule:
+	if humanity of Player < 10 and the Player left:
+		make no decision; [Skip this, if the player succumbed to the infection and has left (everything behind).]
 	if Sarah is in the bunker:
+		trigger ending "Sarah's Epilogue";
 		if SarahCured > 3: [fully cured]
 			if humanity of Player < 10: [player succumbed]
 				say "     Returning to the bunker, you waste no time in pouncing on the little husky you left there earlier - but Sarah actually manages to slip from your grasp. Distraught at seeing her hero and friend in such a state, she runs towards the exit out of the bunker, slamming the door in front of your nose with only a second to spare. Bouncing off the heavy steel door in your haste, Sarah is gone by the time you've picked yourself up from the ground again. You soon give up searching for her, shrugging off any further thought of the young woman as your body's lusts push other priorities aside...";

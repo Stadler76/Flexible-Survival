@@ -42,13 +42,15 @@ to say losetomagicdrake:
 			say "     [if HP of Player > 0]Submitting yourself to the dragoness's whims rather than fight further, you[else]Resisting as best you can, you can eventually fight no longer and[end if] are groped and manhandled by your assailant. Her clawed hands squeeze, pinch and fondle you all over, inspecting your [bodydesc of Player] body, especially your ass. While this is going on, she is also grinding her throbbing cock over you, a five foot pillar of green flesh that drools thick precum. 'Mmm... yes... I can work with this.'";
 			say "     Having reached some kind of decision, she takes her staff and slaps its headpiece against your ass repeatedly. 'Gj v fem yenf wef bmjl jbrab Ahrtob's sab-n-datbjl,' she chants incomprehensibly. Tingles run through your flesh beyond just the sting of the spanking. Looking back, you can see a glowing aura around the end of the staff that seems to spew forth from the golden phallus. It clings to you and seeps into your ass, inducing a transformation to make it fuller and rounded. As the dragoness cums, veritably soaking you in her excessive spooge, there comes an orgasmically pleasurable surge through you and a long, reptilian tail forms at your rear.";
 			now TailName of Player is "Magic Drake";
-			now tail of Player is tail entry;
+			now TailSpeciesName of Player is "Magic Drake";
+			now Tail of Player is tail entry;
 			now mdasslevel is 2;
 		else:
 			say "     [if HP of Player > 0]Submitting yourself to the dragoness's whims rather than fight further, you[else]Resisting as best you can, you can eventually fight no longer and[end if] are groped and manhandled by your assailant. She eyes your altered ass and gives it a hard swat. 'Oh, this will not do at all. Where's the fine booty we were working on? You're a naughty familiar and deserve to be punished,' she says with a teasing growl. She grinds her throbbing cock against you, that five foot pillar of green flesh drooling precum onto you.";
 			say "     Drawing upon her magical powers, she takes her staff and slaps its headpiece against your ass repeatedly. 'Gj v fem yenf wef bmjl jbrab Ahrtob's sab-n-datbjl,' she chants incomprehensibly. Tingles run through your flesh beyond just the sting of the spanking. Looking back, you can see a glowing aura around the end of the staff that seems to spew forth from the golden phallus. It clings to you and seeps into your ass, inducing a transformation to make it fuller and rounded. As the dragoness cums, veritably soaking you in her excessive spooge, there comes an orgasmically pleasurable surge through you and a long, reptilian tail forms at your rear[if mdasslevel is 3]. By the time her spell's completed, that plump, rounded booty from before has returned[else if mdasslevel is 4]. By the time her spell's completed, that impressively large booty from before has returned[else if mdasslevel is 5]. By the time her spell's completed, that huge booty from before has returned[else if mdasslevel is 6]. By the time her spell's completed, that titanic mega-booty from before has returned[end if].";
 			now TailName of Player is "Magic Drake";
-			now tail of Player is tail entry;
+			now TailSpeciesName of Player is "Magic Drake";
+			now Tail of Player is tail entry;
 	else if mdasslevel < 2:		[first loss, but already infected]
 		say "     [if HP of Player > 0]Submitting yourself to the dragoness's whims rather than fight further, you[else]Resisting as best you can, you can eventually fight no longer and[end if] are groped and manhandled by your assailant. Her clawed hands squeeze, pinch and fondle you all over, inspecting your [bodydesc of Player] body, especially your ass. While this is going on, she is also grinding her throbbing cock over you, a five foot pillar of green flesh that drools thick precum. 'Mmm... yes... Already started, I see. All the better; I can certainly work with this.'";
 		say "     Having reached some kind of decision, she grabs you by your draconic tail and easily raises your ass in the air. Holding you like that with one arm, she swings her staff with the other, swatting your rear with it. 'Mbk feth jsic rf'btvr fem yn wef bmjl jbra Wj-Thiban jc febj gibs sa,' she chants incomprehensibly. Tingles run through your flesh beyond just the sting of the spanking. Looking back, you can see a glowing aura around the end of the staff that seems to spew forth from the golden phallus. It clings to you and seeps into your ass, inducing a transformation to make it fuller and rounded. As the dragoness cums, veritably soaking you in her excessive spooge, you feel it and the magic seeping into you, corrupting you further even as your ass plumps up a little more.";
@@ -89,6 +91,8 @@ to say losetomagicdrake:
 		LineBreak;
 		if Player consents:
 			say "[mdrake_bigger_better]";
+		else if (mdmaxlossscene > 1 and a random chance of 1 in 2 succeeds):
+			say "[mdrake_more_scenes]";
 		else:
 			if the remainder after dividing mdrakeloss by 3 is 1:
 				say "     'Now, this is just how I like [']em,' the dragoness rumbles as she gropes your ultra-plump ass. 'Mmm... you look good enough to fuck.' And with that, she pushes you over, yanks your tail into the air and slaps that huge pillar of meat across your back. At five feet in length and a foot across, you shudder at what that thing will do to you. Your enchanted ass though wiggles back as your tailhole relaxes and readies itself of its own accord, as if sensing its mistress at the ready.";
@@ -164,6 +168,27 @@ to say losetomagicdrake:
 		FeatGain "Twisted Capacity";
 	increase mdrakeloss by 1;
 
+to say mdrake_more_scenes:
+	say "     You fall to your knees, overcome by the magic drake. Above you, the drake chuckles and walks towards you with a relaxed gait, one that doesn't quite mesh with the eager expression on her face. 'I was planning on improving my spell with you again, but you look so tempting, my familiar. I think instead I'll just enjoy you directly, and get back to work the next time. How does that sound, hmm?' You are at first unsure if it is a rhetorical question, but as the drake reaches down and gently lifts your face, making eye contact, you can tell what answer she wants. You nod slowly, powerless to resist her demands, and in response she smiles with only the slightest hint of smugness. 'I expected as much, I can tell you always enjoy our little... chats, almost as much as I do.'";
+	if a random chance of 1 in 2 succeeds: [anal]
+		say "     Rather than leave you in your current position, the drake gently pushes you back, using her surprising strength to control your movement carefully. For a moment you're simply lying on your back, looking like you'll be treated to a railing from missionary position, but you find that instead she grips your ankles and lifts. In a mere moment she has your legs raised above your head, leaving you completely at her mercy in a perfect position to receive a pounding. You can clearly see as her expression changes, features aligning into the smugly satisfied expression that is so familiar on her face. Equally visible is her massive shaft hanging in the air between you, though you know that it won't be there for much longer when there's a much better place for her to store it—inside you.";
+		WaitLineBreak;
+		say "     For a single moment she holds her shaft in place just at your entrance, as if savoring the experience. The next moment her hips grind into motion once more, powering her member forwards and impaling you on it. You've had this particular sensation a number of times, but each time is just as intense as the last, the drake never failing to deliver a world-class fucking. Each time she pistons in and out, she goes just a little bit deeper, the force of each thrust only amplified by the way she's leaning over you. You can already feel faint stirrings of pleasure within you, building up with each pump into your jiggling rear. Finally she hits the deepest point she can, something you can tell by the feeling of her basketball sized orbs colliding with your cheeks when she bottoms out, and further confirmed by the visible outline of her huge cock.";
+		say "     Your mistress lets out a sigh of satisfaction as she rests for a moment, fully sheathed inside you. 'Truly, you're the best familiar a sorceress could ask for. You feel so perfect wrapped around my cock, and the blissed out look it gives you is a sight to behold.' With that, she slowly moves again, this time staying almost fully within you, each time pulling only a few inches out before gliding back in, steadily teasing you. In addition to the sensations you were already feeling, a familiar tingle has returned, with your plush behind gaining a little extra bit of stuffing each time she stuffs you, until it's massive enough to match her own endowments fully.";
+		WaitLineBreak;
+		say "     Once she has you exactly the way she wants you, she continues her sensual motions. Each stroke subjecting you to the feeling of her smooth flesh against your inner walls, the rising friction only increasing the positive sensations. The repeating actions start to lull you into a surprisingly calm state, passively taking everything she gives you as the pleasure simply washes over and through you, her face the only thing on your mind. She looks down in the midst of her thrusting, and her eyes meet yours. Everything comes to a stop, forming a surprisingly tender moment. Within that moment you wonder where this might lead, but those questions are quickly buried under the onslaught of bliss that arrives when she starts to thrust once more, this time with even more feeling.";
+		say "     As if a spell has been broken, the peaceful aura you were both surrounded in is torn away, leaving only the powerful contact between you. Her pace accelerates, and taken with the way her expression is twisting, you're almost certain she's about to hit her peak. Your faint, breathy noises finally erupt into full fledged moans, as you eagerly await what she has in store for you. She's about to treat you like nothing more than a receptacle for her enchanted seed, and as her familiar you're happy to comply. Eventually her voice matches yours, moaning alongside, as she slams her titanic member fully into you for the last time, one final shockwave of pleasure and jiggling flesh leading the way directly into a shared climax.";
+		say "     The moment the two of you orgasm, your pleasures intertwined, you can feel the surge of cream flooding into you, wave after wave of the magical load being released from the magic drake. It seems to keep coming, jet after jet, enough to leave you with a visible belly from just how much is being stored in your rear, until finally the wave subsides. The drake does not pull out as you expect her to, but instead adjusts your position until you're held in her arms, still full of her member, at least for now. For several minutes she remains like that, without a word, but eventually she disentangles from your joining, leaving you to finish your recovery on your own. 'That was most delightful, my familiar. I'm looking forward to the next time.'";
+	else: [oral]
+		say "     Without moving you from your position at all, the drake stands back up fully, only pausing to adjust her dress, revealing her massive endowments to the world. From where you are, the tip of her shaft hangs enticingly in the air only inches away from your face. It's easy to predict what she wants you to do at this point, and you can't see a good reason not to play along, not when your perspective is entirely taken up by the sight and smell of her draconic member. You decide to waste no time in adding taste to that very same list, and lean forward pressing your closed lips against the head in a gentle kiss, before gradually adding careful licking to your performance, working her up for the main event.";
+		WaitLineBreak;
+		say "     She's clearly willing to let you work at your own pace, and you repay that generosity with eager service. As you tease your way across the surface of her dick, you marvel at each tiny detail, committing it all carefully to memory. The overwhelming and heady scent of her member, with the matching taste of the shaft, the strong flavor of the streams of pre constantly drooling from her slit, the sensation of every vein and ridge dotting the surface as you run your tongue and fingers over them—together they form a perfect whole, a not-so-little piece of paradise right there in your mouth.";
+		say "     After several minutes of savoring those sensations, you take a slight detour in your path along her magnificent cock, working your way down towards the equally beautiful orbs below, each one large enough to match a volleyball. In several ways what follows is a repeat of your earlier performance, mostly with your attention to detail. Despite perhaps being superficially less important, you dedicate no less effort and focus to worshiping her full balls, practically burying your face in them as you work. You massage them with both hands while you kiss and suck at the skin, almost able to feel the powerful load held within.";
+		WaitLineBreak;
+		say "     Finally, it's time for the main course. You work your way back up to the head, meeting the drake's eyes for just a moment of silent communication, before taking the plunge. The sheer size of her member makes the ordeal a rather daunting one, but you wouldn't have it any other way. With some effort, you're able to start slipping your lips around the tip, inching down slowly. Each step is a trial, challenging your resolve and skill both, but eventually your attempts bear fruit, and you manage to get the entire head into your mouth. From there, the task grows far simpler, the shaft sliding deeper into your maw with a practiced ease. From there you begin to bob back and forth along her cock slowly, all to bring her to the height of pleasure.";
+		say "     In the end, her climax comes far sooner than you expected, apparently accelerated by your endless teasing and foreplay. You've only been down her shaft for a few minutes when you feel the member harden further, and start to throb more. Mentally you brace yourself for the rising tide about to happen, and your foresight is rewarded as non a moment later, she hits her peak. The dick twitches powerfully, each jerk accompanied by a huge spurt of enchanted jizz directly down your throat. You close your eyes, to focus purely on the sensation of being filled like this, enjoying the taste of her release as it floods into you. Even when you can't see it, you can tell that her cock is visible in your throat, as well as each jet of cream, if only through sheer volume.";
+		say "     Eventually her ecstasy comes to an end, and you pull backwards off of her softening shaft. Your throat is somewhat sore, your entire being seems suffused with her cum, and most importantly she's satisfied. The drake steps back from you, a slight wobble in her legs informing you of just how powerful that orgasm was for her, and pulls her dress back into it's regular position. 'Excellent work, familiar. You always know just how to please me. I have other business to attend to, but rest assured, I'll be seeing you again.' Her smile as she says this seems more affectionate than usual, but you don't have very long to appreciate it before she turns around and leaves. You smile to yourself, satisfied with what you've done for her, and looking forward to doing it again.";
+		[grinding, teasing, fucks player with her staff and tail, cums on their face]
 
 to say mdrake_bigger_better:
 	if mdmaxlossscene is 0:
@@ -175,7 +200,7 @@ to say mdrake_bigger_better:
 		WaitLineBreak;
 		say "     With each thrust, her cock slides along your sensitive inner walls and lining it with her pre. You can feel the liquid pooling inside of you, the warmth of it spreading throughout your body as your body wobbles and jiggles. The drake's thrusts slowly grow more and more frantic, both of your pants occurring much more frequently as you both grow closer to orgasm. Every second she spends inside of your rear feels so, so right, and the way her digits dig into your incredibly massive rear, blubber spilling out between the fingers drives you wild. With one final thrust, she pushes all the way in, causing that incredible shaft to bulge against your stomach as she unleashes her hefty load inside of you. The drake calls out in bliss as her spunk sprays into you, and as if on cue, you orgasm as well, feeling total pleasure encompass your entire body. Your belly bloats outward with her semen, giving you a nice stomach full of your master's spunk. Soon, after the climax ends, her softening cock slowly slides out of your well-fucked hole, causing a trail of cum to pour out of you. You lie on the ground, panting and feeling quite sleepy as she stands up. 'That was amazing, my dear familiar. You've made me incredibly happy... I'll leave you here to enjoy yourself... and you know where to find me,' she giggles, before heading off. In a daze of bliss, you slowly doze off, only to wake up later back at your original size and surrounded by a pool of her cum, before you head off.";
 		increase mdmaxlossscene by 1;
-	else if mdmaxlossscene is 1: [in progress]
+	else if mdmaxlossscene is 1:
 		say "     [if HP of Player > 0]The lure of your master proves too strong for you as you submit, expressing your surrender to the magic drake. Seeing your submission, she ceases her attacks and takes on a more casual stance. 'Good, good. Come to your senses, have you?' she coos. The drake saunters over to you as you gather your composure, recovering quickly from the brief spat. 'It pleases me to know you've accepted me for now... It's such a pity that you insist on wandering off... but that only makes it much more pleasing when you come to me, my familiar,' she sighs, reaching you. The drake runs a claw down the side of your face, inciting a pleasant shudder to creep down your spine[else]You stumble backwards, panting as your stamina runs out. Try as you might, you simply lack the further strength to fight back. Noticing your inability to continue fighting, the drake smirks proudly and approaches you. 'Naughty thing, thinking you can beat me? Such a feisty familiar... It's almost cute to watch you try to fight, but we both know who's more powerful,' the drake taunts, reaching you. She strokes your face, sending tingles down your body as you can feel traces of her magic coursing through you. You find your fatigue fading away, but in its place grows a powerful lust. It's clear to you that she's trying to bring you to submitting to her, even after your defeat[end if]. 'Now that that farce of a fight is over, my dear butt-slut, what shall I do with you? I feel... inspired. Simple sex won't do it for me!' she teases, groping your soft rear and causing a moan to escape your lips. You find your tail lifting naturally, granting your master access to your large, soft hole. The drake's hand makes its way from your cheek to your rear entrance, arm stuck between those massive and soft cheeks. Her soft, clawed digits slide into your moist and sensitive passageway, causing you to jolt forward slightly. 'Such a wonderful hole, so soft and inviting,' she compliments, fingers squirming within you as she slowly inserts her entire hand inside.";
 		say "     Teasing your insides, alternating between fisting you and tickling your entrance, the drake relishes in your lustful squirming. 'What a good slut, you enjoy that don't you? Don't you love the gifts I've given you?' she says playfully, giving your interior one last caress before pulling her hand out with a soft pop. Your stretched hole gapes and twitches as your master takes a small step back. 'I have an idea I think you'll love...' the massive drake ponders, taking out a strange looking object. She throws it on the ground and, in a puff of smoke, appears a strange yet familiar creature. A small reptilian creature, shining bright like rubber, and with a massive pair of testicles- a koballoon. He looks around, confused and dazed. The drake grabs the koballoon, causing him to squirm in defiance, but a smack on the head from his captor calms him down. Carrying him, she gets close up to you again. 'Lay down for me,' she commands. You comply, not really in a position to refuse, but also curious and excited for what she has in store for you. Lowering yourself down on your knees first, you proceed to lie down on your front. The magic drake looks excited and pleased as she brings the koballoon over to you, the rubber reptile's gargantuan balls swaying with each step she takes. 'These beasts may be a failed creation, but... I think they might have their uses still,' your master giggles. You turn back to watch what she does, and you see quite the sight.";
 		WaitLineBreak;
@@ -453,6 +478,7 @@ to say beatthemagicdrake:
 								say ". The tingly energy floods your senses and flows into you, causing your head to transform. You can feel your cranium pulse and throb, building up until there comes a loud snap. More pops and snaps follow as your head shifts and reshapes itself. A draconic muzzle pushes forth and a pair of small horns grow on the top of your head";
 								choose row MonsterID from the Table of Random Critters;
 								now FaceName of Player is "Magic Drake";
+								now FaceSpeciesName of Player is "Magic Drake";
 								now Face of Player is face entry;
 							say ". The dragoness laughs at your feeble attempt to use her magic.";
 							now mdstaffface is true;
@@ -491,6 +517,7 @@ to say beatthemagicdrake:
 									say "     The magic doesn't quite end up working as expected though, spraying all across your groin. It seeps into your crotch with a pleasant tingle that suffuses your [if Player is herm]cock[smn] and cunt[sfn][else if Player is male]cock[smn][else]cunt[sfn][end if]. The magical energy clings to your sensitive loins and sinks right into them, causing them to shift and change[if Player is herm]. The flesh of your loins changes and your manhood and your pussy lips are transformed[else if Player is male]. The flesh of your loins changes and your manhood is transformed[else]. The flesh of your loins changes and your pussy lips are transformed[end if], taking on a rich, green hue as you become infected, much to the dragoness's amused delight.";
 									choose row MonsterID from the Table of Random Critters;
 									now CockName of Player is "Magic Drake";
+									now CockSpeciesName of Player is "Magic Drake";
 									now Cock of Player is cock entry;
 									increase Libido of Player by 5;
 								else if mdstaffaction is 5:		[cock growth]
@@ -556,6 +583,7 @@ to say mdrake_pvictory_03:
 		if CockName of Player is not "Magic Drake":
 			say "     Having your genitals overloaded with the dragoness's semen has left your penis transformed. While human-like in shape, it is now made of green flesh and your pubic hair has been replaced by a patch of green scales. You can feel a warmth in your balls as your semen is corrupted and transformed by the lingering dragon cum still in there, making it draconic as well.";
 			now CockName of Player is "Magic Drake";
+			now CockSpeciesName of Player is "Magic Drake";
 			now Cock of Player is cock entry;
 			if Ball Size of Player < 36:
 				increase Ball Size of Player by ( 50 - Ball Size of Player ) / 10;
@@ -645,28 +673,18 @@ to say mdstaff_overgrown:
 	if Libido of Player > 100, now Libido of Player is 100;
 	if mdrakeoversized >= 5 and inasituation is false:
 		now mdrakeoversized is 100;
-		choose row MonsterID from the Table of Random Critters;
 		now humanity of Player is 0;
-		now TailName of Player is "Magic Drake";
-		now FaceName of Player is "Magic Drake";
-		now SkinName of Player is "Magic Drake";
-		now BodyName of Player is "Magic Drake";
-		now CockName of Player is "Magic Drake";
-		attributeinfect;
-		now tail of Player is tail entry;
-		now Face of Player is face entry;
-		now Skin of Player is skin entry;
-		now Body of Player is body entry;
-		now Cock of Player is cock entry;
+		turn the Player into a "Magic Drake" silently; [NOTE: Avoid attributeinfect output in a game over (@Stadler#3007)]
 		if hellHoundLevel is 0:
 			follow the sex change rule;
 			follow the sex change rule;
 		if Libido of Player < 45, now Libido of Player is 45;
 		wait for any key;
+		trigger ending "Magic Dragoness's Familiar";
 		end the story saying "Having accepted your role as the dragoness's familiar, you go off with the sorceress.";
 		now battleground is "void";
-		wait for any key;
 		follow the turnpass rule;
+		wait for any key;
 		stop the action;
 
 
@@ -870,11 +888,27 @@ to say mdscaletweak:
 	else:
 		now scale entry is 3;
 
+
 Section 3 - Endings
 
+Table of GameEndings (continued)
+Name (text)	Type (text)	Subtype (text)	Ending (rule)	Priority (number)	Triggered (truth state)
+"Magic Dragoness's Familiar"	"Leaving"	""	Magic Dragoness's Familiar rule	100	false
+"Magic Dragoness's Servant"	"Leaving"	""	Magic Dragoness's Servant rule	100	false
+["Magic Drake Infection"	"Infection"	""	Magic Drake Infection rule	1000	false]
+
+This is the Magic Dragoness's Familiar rule:
+	if ending "Magic Dragoness's Familiar" is triggered:
+		the Player has left;
+
+This is the Magic Dragoness's Servant rule:
+	if ending "Magic Dragoness's Servant" is triggered:
+		the Player has left;
+
 [
-when play ends:
-	if BodyName of Player is "Magic Drake":
+This is the Magic Drake Infection rule:
+	if Player has a body of "Magic Drake":
+		trigger ending "Magic Drake Infection"; [Here it states, that the ending has been played.]
 		if humanity of Player < 10:
 			say "     You succumb to your template infection.";
 		else:
@@ -890,7 +924,7 @@ when play ends:
 ]
 
 to say mdrake_bad_end:
-	say "     Once more you lay helpless before the drake, begging to be taken by your mistress. The sight of you on the ground before her causes her to smirk, and with a twirl of her staff you can feel the now familiar sensation of your ass ballooning outward with her magic, reaching the incredibly size she pushed it to the last time you saw her. As you're distracted by the pillowy cheeks you now have, the drake circles around you and gives one a smack, sending a shockwave over the surface. 'Ah, you accept my magic so easily now, like the wonderful little familiar you are. I think that now I've perfected the spell, you see, and it's time to make you perfect. Doesn't that sound wonderful?' A moment passes, before you realize that it wasn't simply a rhetorical question. No matter what happens, you're not sure you'll ever escape her charms. [bold type]Do you give in fully to the drake?[roman type]";
+	say "     Once more you lay helpless before the drake, begging to be taken by your mistress. The sight of you on the ground before her causes her to smirk, and with a twirl of her staff you can feel the now familiar sensation of your ass ballooning outward with her magic, reaching the incredibly size she pushed it to the last time you saw her. As you're distracted by the pillowy cheeks you now have, the drake circles around you and gives one a smack, sending a shockwave over the surface. 'Ah, you accept my magic so easily now, like the wonderful little familiar you are. I think that now I've perfected the spell, you see, and it's time to make you perfect. Doesn't that sound wonderful?' A moment passes, before you realize that it wasn't simply a rhetorical question. No matter what happens, you're not sure you'll ever escape her charms. [bold type]Do you give in fully to the drake?[roman type][line break]";
 	LineBreak;
 	say "     ([link]Y[as]y[end link]) - Become hers completely.";
 	say "     ([link]N[as]n[end link]) - No, never!";
@@ -922,9 +956,10 @@ to say mdrake_bad_end:
 		[I was thinking that would be the submit option, the pc then ending up in the drakes temple as her concubine and species idol. The entire city having turned into magic drakes thanks to the magic she can get the pc to build up from butt stuffin. The bigger the pcs butt, the more magic she gets. Thats sorta what i wanted. Submit and she makes a perfect society of lust, size and plenty thanks to the rampant amount of magic around. Everyone gets to live lives of pleasure without need or want with her as their goddess ( all the magic flowing to her will certainly let her achieve that.)]
 		decrease score by 25;
 		now humanity of Player is 0;
-		follow the turnpass rule;
+		trigger ending "Magic Dragoness's Servant";
 		end the story saying "In the end, the city becomes a paradise for all within it. From the sheer power of your goddess' magic, there is more than enough of everything to go around, letting everyone pursue their own desires and passions, usually involving quite a lot of fucking one way or another. All the stuffing and swallowing and more, all in the magic drake's name, feeds her powers with just as much fervor as the fucking itself. Your mistress has created a flawless utopia, a perfect society of lust and massive sizes—and you can't wait to see that utopia be shared with the rest of the world.";
 		now battleground is "void";
+		follow the turnpass rule;
 	else: [resist path]
 		say "     Barely mustering the willpower, you shake your head to her question. As much as you want to submit to her every desire, something is keeping you from giving up on your other tasks. Behind you, you hear a huff from the drake, and can imagine the look of disappointment she must be wearing clearly. 'Well, I suppose you can't be as wise as me, little familiar. But even if you aren't ready yet, that isn't going to stop me from taking what's mine, and you are mine. Don't worry, I'll show you just how wonderful it will be.' You hardly have time to process her words before you feel a titanic slap on your ass, the resting weight leaving you with no doubt that it's the drake's member, magically enhanced to match your massive booty.";
 		say "     She slowly pulls herself further back, the tip of her member dragging across your skin, leaving a small trail of her pre as a taste of what's to come. Soon her rod is in place, poised to enter your passageway at her command. You steel yourself, ready to resist the pleasures she's sure to inflict on you, but nothing happens. Not willing to give her any satisfaction, you stay perfectly still, eyes closed, not giving her any acknowledgment. Eventually you hear a hearty chuckle. 'So brave, familiar, but so foolish. No matter how hard you resist, you'll give in to me.' Almost the second she finishes speaking, she thrusts forward, driving her massive shaft deeply into you in a single powerful stroke, driving the breath out of you and breaking your silence with an involuntary moan.";
@@ -971,8 +1006,9 @@ to say mdrake_bad_end:
 		say "     Anyone looking at you at the moment would see that both you and the drake are covered in a crackling aura of magic, slowly increasing the both of you in size—with your ass and her entire package both growing far more than the rest. The endless reaming at the hands of the drake continues to increase the pleasure you feel in each moment, as her power grows to match her size. Soon you can barely think, so powerful is the pleasure she continues to gift you with via her ever larger cock. Finally she reaches her climax and paints your insides with a truly incredible amount of cum, courtesy of her equally large balls. Both of you cry out in pleasure at the same time, the magic swirling and rushing around the pair of you all being drawn into your mistress, giving her an even greater boost. With her newfound power, few things are beyond her reach, but you are satisfied with being exactly where you are, forever.";
 		decrease score by 25;
 		now humanity of Player is 0;
-		follow the turnpass rule;
+		trigger ending "Magic Dragoness's Familiar";
 		end the story saying "The city has changed, now a feudal land full of strife. Massively endowed draconic warlords, formed in the drake's image, each have seized their own territory, ruling as they see fit. For most of them, that involves taking what they want, when they want. Usually this means that those living under the control of one of these warlords serve as toys for them to fuck at their leisure. Even if they were to escape, they'd simply end up servicing a different draconic ruler instead, leading to a tenuous sort of piece. Those outside the city feel safe for now, but it's only a matter of time before the drake ventures out and converts them as well, conquering more and more of the world with her size and magic power. As for you, you spend all of eternity as the drake's familiar and toy, exactly as you wish.";
 		now battleground is "void";
+		follow the turnpass rule;
 
 Magic Drake ends here.

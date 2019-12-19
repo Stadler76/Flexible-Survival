@@ -2,6 +2,10 @@ Sex and Infection Functions by Core Mechanics begins here.
 [Version 1 - Pulled Together into its own file]
 "Basic Functions for Sex, Sexual Changes and Infections of the Flexible Survival game"
 
+Definition: A person (called x) is sterile:
+	if "Sterile" is listed in feats of x, yes;
+	no;
+
 Definition: A person (called x) is FullyNewTypeInfected:
 	if HeadName of x is "", no;
 	if TorsoName of x is "", no;
@@ -26,6 +30,25 @@ to decide if ( x - a text ) is an/-- OviImpregnator:
 to decide if (x - a person) has a body of (i - a text):
 	if TorsoName of x is i, decide yes;
 	if BodyName of x is i, decide yes;
+	decide no;
+
+to decide if (x - a person) has no body of (i - a text):
+	if x has a body of i, decide no;
+	decide yes;
+
+to decide if the/-- Player has a non-shifting body of (i - a text):
+	if Player is shifter, decide no;
+	if Player has a body of i, decide yes;
+	decide no;
+
+to decide if the/-- Player has no non-shifting body of (i - a text):
+	if Player is shifter, decide yes;
+	if Player has a body of i, decide no;
+	decide yes;
+
+[@Todo: Handle new style infection here when implemented]
+to decide if (x - a person) has a skin of (i - a text):
+	if SkinName of x is i, decide yes;
 	decide no;
 
 to decide which text is GetSpeciesName from (N - a text):
@@ -174,12 +197,27 @@ to SetInfectionsOf ( Target - a person ) randomized between ( Father - a person 
 		now TailSpeciesName of Target is TailSpeciesName of Mother;
 
 to attributeinfect with/-- ( Infection - a text ):
+	attributeinfect Infection silence state is 0;
+
+to attributeinfect with/-- ( Infection - a text ) silently:
+	attributeinfect Infection silence state is 1;
+
+to attributeinfect with/-- ( Infection - a text ) silence state is ( Silence - a number ):
 	let StoredMonsterID be MonsterID;
 	setmonster Infection silently;
-	attributeinfect;
+	if Silence is 0:
+		attributeinfect;
+	else:
+		attributeinfect silently;
 	now MonsterID is StoredMonsterID;
 
 to turn the/-- Player into a/an/-- ( Infection - a text ):
+	turn Player into Infection silence state is 0;
+
+to turn the/-- Player into a/an/-- ( Infection - a text ) silently:
+	turn Player into Infection silence state is 1;
+
+to turn the/-- Player into a/an/-- ( Infection - a text ) silence state is ( Silence - a number ):
 	if there is no Name of Infection in the Table of Random Critters:
 		say "ERROR: Attempted to set the players infection to '[Infection]'. Please report this on the FS Discord.[line break]";
 		stop the action;
@@ -235,6 +273,9 @@ to turn the/-- Player into a/an/-- ( Infection - a text ):
 		now TailSpeciesName of Player is InfectionSpeciesName;
 		now CockSpeciesName of Player is InfectionSpeciesName;
 		now CuntSpeciesName of Player is InfectionSpeciesName;
-	attributeinfect with Infection;
+	if Silence is 0:
+		attributeinfect with Infection;
+	else:
+		attributeinfect with Infection silently;
 
 Sex and Infection Functions ends here.
